@@ -49,9 +49,19 @@ public class Player : MonoBehaviour
     public GameObject projectilePrefab;
 
     /// <summary>
-    /// 스킬 발사체 발사 위치
+    /// 스킬 불꽃 손 프리팹
     /// </summary>
-    Transform projectileTransform;
+    public GameObject flameHandPrefab;
+
+    /// <summary>
+    /// 스킬 시작 위치
+    /// </summary>
+    public GameObject skillSpawnPoint;
+
+    /// <summary>
+    /// 스킬 범위 지정
+    /// </summary>
+    public Vector3 rangeSkillPosition = Vector3.zero;
 
     /// <summary>
     /// 플레이어 공격 상태
@@ -63,8 +73,6 @@ public class Player : MonoBehaviour
         inputActions = new PlayerInputActions();
         animator = GetComponentInChildren<Animator>();
         rigid2d = GetComponent<Rigidbody2D>();
-
-        projectileTransform = transform.GetChild(1);
     }
 
     private void FixedUpdate()
@@ -225,8 +233,13 @@ public class Player : MonoBehaviour
         rigid2d.MovePosition(newPosition);
     }
 
+    public void FireFlameHand()
+    {
+        Instantiate(flameHandPrefab, skillSpawnPoint.transform.position + rangeSkillPosition, Quaternion.identity);
+    }
+
     public void FireProjectile()
     {
-        Instantiate(projectilePrefab, projectileTransform.position, Quaternion.identity);
+        Instantiate(projectilePrefab, skillSpawnPoint.transform.position, Quaternion.identity);
     }
 }

@@ -9,6 +9,11 @@ public class PlayerAnimation : MonoBehaviour
     /// </summary>
     public Player player;
 
+    public void FireFlameHand()
+    {
+        player.FireFlameHand();
+    }
+
     public void FireProjectile()
     {
         player.FireProjectile();

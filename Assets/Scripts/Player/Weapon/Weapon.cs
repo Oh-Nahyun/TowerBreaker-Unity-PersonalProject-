@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        swordSoldier = FindAnyObjectByType<SwordSoldier>();
+        swordSoldier = collision.GetComponent<SwordSoldier>();
 
         if (collision.gameObject.CompareTag("Enemy"))
         {

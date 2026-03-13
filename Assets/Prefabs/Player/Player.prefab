@@ -4202,6 +4202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   projectilePrefab: {fileID: 4891780971573526544, guid: f5af0a479b17947af95bf74bd3dc6cde, type: 3}
+  flameHandPrefab: {fileID: 1284241484961176662, guid: 998c5e3e1c0a040eda48cf1fb025e65f, type: 3}
+  skillSpawnPoint: {fileID: 8930689754408541906}
+  rangeSkillPosition: {x: 0, y: 0.95, z: 0}
   isOnAttack: 0
 --- !u!1 &2034921415427146200
 GameObject:
@@ -7786,9 +7789,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8826930458707283331}
-  m_Layer: 3
-  m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: SkillSpawnPoint
+  m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
