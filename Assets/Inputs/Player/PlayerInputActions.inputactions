@@ -15,7 +15,16 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attack",
+                    "name": "Defense",
+                    "type": "Button",
+                    "id": "e858e991-9ff5-4f0c-8f4d-5b4b23534407",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NormalAttack",
                     "type": "Button",
                     "id": "1ff236e2-be4e-4a8f-9998-a96e46755b63",
                     "expectedControlType": "Button",
@@ -24,9 +33,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Defense",
+                    "name": "HardAttack",
                     "type": "Button",
-                    "id": "e858e991-9ff5-4f0c-8f4d-5b4b23534407",
+                    "id": "8ab02d11-007b-4e0f-829c-792bf0eb0a1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RangeAttack",
+                    "type": "Button",
+                    "id": "be21e85e-0545-4188-b3c4-e5847d209b45",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StabAttack",
+                    "type": "Button",
+                    "id": "31428d97-f723-4397-b989-9fb44a312121",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -74,7 +101,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Attack",
+                    "action": "NormalAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9711da3-d510-4e50-8cc5-1ce9edad554d",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HardAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -86,6 +124,28 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Defense",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09d0640f-22fd-4bdc-a3bb-168c23278e88",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RangeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0190d9d-3a67-4ee8-ab97-4eb59131e7dc",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StabAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

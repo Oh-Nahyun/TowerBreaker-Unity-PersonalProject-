@@ -37,7 +37,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""Defense"",
+                    ""type"": ""Button"",
+                    ""id"": ""e858e991-9ff5-4f0c-8f4d-5b4b23534407"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NormalAttack"",
                     ""type"": ""Button"",
                     ""id"": ""1ff236e2-be4e-4a8f-9998-a96e46755b63"",
                     ""expectedControlType"": ""Button"",
@@ -46,9 +55,27 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Defense"",
+                    ""name"": ""HardAttack"",
                     ""type"": ""Button"",
-                    ""id"": ""e858e991-9ff5-4f0c-8f4d-5b4b23534407"",
+                    ""id"": ""8ab02d11-007b-4e0f-829c-792bf0eb0a1a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RangeAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""be21e85e-0545-4188-b3c4-e5847d209b45"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StabAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""31428d97-f723-4397-b989-9fb44a312121"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -96,7 +123,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
-                    ""action"": ""Attack"",
+                    ""action"": ""NormalAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9711da3-d510-4e50-8cc5-1ce9edad554d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HardAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -108,6 +146,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""Defense"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09d0640f-22fd-4bdc-a3bb-168c23278e88"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RangeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0190d9d-3a67-4ee8-ab97-4eb59131e7dc"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StabAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -136,8 +196,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Defense = m_Player.FindAction("Defense", throwIfNotFound: true);
+        m_Player_NormalAttack = m_Player.FindAction("NormalAttack", throwIfNotFound: true);
+        m_Player_HardAttack = m_Player.FindAction("HardAttack", throwIfNotFound: true);
+        m_Player_RangeAttack = m_Player.FindAction("RangeAttack", throwIfNotFound: true);
+        m_Player_StabAttack = m_Player.FindAction("StabAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -200,15 +263,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Defense;
+    private readonly InputAction m_Player_NormalAttack;
+    private readonly InputAction m_Player_HardAttack;
+    private readonly InputAction m_Player_RangeAttack;
+    private readonly InputAction m_Player_StabAttack;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Defense => m_Wrapper.m_Player_Defense;
+        public InputAction @NormalAttack => m_Wrapper.m_Player_NormalAttack;
+        public InputAction @HardAttack => m_Wrapper.m_Player_HardAttack;
+        public InputAction @RangeAttack => m_Wrapper.m_Player_RangeAttack;
+        public InputAction @StabAttack => m_Wrapper.m_Player_StabAttack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -221,12 +290,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
             @Defense.started += instance.OnDefense;
             @Defense.performed += instance.OnDefense;
             @Defense.canceled += instance.OnDefense;
+            @NormalAttack.started += instance.OnNormalAttack;
+            @NormalAttack.performed += instance.OnNormalAttack;
+            @NormalAttack.canceled += instance.OnNormalAttack;
+            @HardAttack.started += instance.OnHardAttack;
+            @HardAttack.performed += instance.OnHardAttack;
+            @HardAttack.canceled += instance.OnHardAttack;
+            @RangeAttack.started += instance.OnRangeAttack;
+            @RangeAttack.performed += instance.OnRangeAttack;
+            @RangeAttack.canceled += instance.OnRangeAttack;
+            @StabAttack.started += instance.OnStabAttack;
+            @StabAttack.performed += instance.OnStabAttack;
+            @StabAttack.canceled += instance.OnStabAttack;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -234,12 +312,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
             @Defense.started -= instance.OnDefense;
             @Defense.performed -= instance.OnDefense;
             @Defense.canceled -= instance.OnDefense;
+            @NormalAttack.started -= instance.OnNormalAttack;
+            @NormalAttack.performed -= instance.OnNormalAttack;
+            @NormalAttack.canceled -= instance.OnNormalAttack;
+            @HardAttack.started -= instance.OnHardAttack;
+            @HardAttack.performed -= instance.OnHardAttack;
+            @HardAttack.canceled -= instance.OnHardAttack;
+            @RangeAttack.started -= instance.OnRangeAttack;
+            @RangeAttack.performed -= instance.OnRangeAttack;
+            @RangeAttack.canceled -= instance.OnRangeAttack;
+            @StabAttack.started -= instance.OnStabAttack;
+            @StabAttack.performed -= instance.OnStabAttack;
+            @StabAttack.canceled -= instance.OnStabAttack;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -269,7 +356,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
         void OnDefense(InputAction.CallbackContext context);
+        void OnNormalAttack(InputAction.CallbackContext context);
+        void OnHardAttack(InputAction.CallbackContext context);
+        void OnRangeAttack(InputAction.CallbackContext context);
+        void OnStabAttack(InputAction.CallbackContext context);
     }
 }
