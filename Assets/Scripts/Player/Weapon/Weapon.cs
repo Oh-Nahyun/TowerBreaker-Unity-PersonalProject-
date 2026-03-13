@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && swordSoldier.IsAlive())
         {
             swordSoldier.health = 0;
-            Destroy(collision.gameObject);
+            swordSoldier.Die();
         }
     }
 }

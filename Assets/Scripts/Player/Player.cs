@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 플레이어 리지드바디
     /// </summary>
-    Rigidbody2D rigid2D;
+    Rigidbody2D rigid2d;
 
     /// <summary>
     /// 플레이어 이동 속도
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     {
         inputActions = new PlayerInputActions();
         animator = GetComponentInChildren<Animator>();
-        rigid2D = GetComponent<Rigidbody2D>();
+        rigid2d = GetComponent<Rigidbody2D>();
 
         projectileTransform = transform.GetChild(1);
     }
@@ -221,8 +221,8 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        Vector2 newPosition = rigid2D.position + Time.fixedDeltaTime * moveSpeed * inputDir;
-        rigid2D.MovePosition(newPosition);
+        Vector2 newPosition = rigid2d.position + Time.fixedDeltaTime * moveSpeed * inputDir;
+        rigid2d.MovePosition(newPosition);
     }
 
     public void FireProjectile()
