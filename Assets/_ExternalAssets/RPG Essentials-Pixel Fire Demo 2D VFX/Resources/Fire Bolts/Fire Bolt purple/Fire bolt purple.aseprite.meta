@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: b4afa8f1629af9d4bbd56c23d61be493
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 92
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638870776049778768
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Fire bolt purple_Frame_0
+    originalName: 
+    pivot: {x: 6.571429, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 113
+      width: 7
+      height: 7
+    spriteID: 23f50b3c7cf5c4f489d89a4b9b99736c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 113}
+  - name: Fire bolt purple_Frame_1
+    originalName: 
+    pivot: {x: 6.2857146, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 50
+      width: 7
+      height: 16
+    spriteID: 5c68e4d4965bb4637b59446020e3e4cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 50}
+  - name: Fire bolt purple_Frame_2
+    originalName: 
+    pivot: {x: 5.8571434, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 19
+      width: 7
+      height: 23
+    spriteID: cc8fe8aead95146ac84b64478d47e598
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 19}
+  - name: Fire bolt purple_Frame_3
+    originalName: 
+    pivot: {x: 5.125, y: -0.12}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 80
+      width: 8
+      height: 25
+    spriteID: 3a099c9bad65a429683395197999dfa8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 80}
+  - name: Fire bolt purple_Frame_4
+    originalName: 
+    pivot: {x: 5.125, y: -0.033333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 42
+      width: 8
+      height: 30
+    spriteID: fdf1789aecdef4009b2b813ed68559b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 42}
+  - name: Fire bolt purple_Frame_5
+    originalName: 
+    pivot: {x: 3.0000002, y: 0.029411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 86
+      width: 14
+      height: 34
+    spriteID: 57df1cf63af1b4a91863659c360c5025
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 86}
+  - name: Fire bolt purple_Frame_6
+    originalName: 
+    pivot: {x: 2.25, y: -0.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 21
+      width: 20
+      height: 11
+    spriteID: 3d3279993ed124a7f8e9da38e27c3695
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 21}
+  - name: Fire bolt purple_Frame_7
+    originalName: 
+    pivot: {x: 1.6400001, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 56
+      width: 25
+      height: 8
+    spriteID: 237385e2779d0492ab7d9cca29ab0651
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 56}
+  - name: Fire bolt purple_Frame_8
+    originalName: 
+    pivot: {x: 1.4074074, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 40
+      width: 27
+      height: 8
+    spriteID: cb92b8b47153e460c895cf30a7a27898
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 40}
+  - name: Fire bolt purple_Frame_9
+    originalName: 
+    pivot: {x: 1.1851852, y: -1.5714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 88
+      width: 27
+      height: 7
+    spriteID: 63f5e2fa21d2c48b8b26d0ad0bb8e44b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 88}
+  - name: Fire bolt purple_Frame_10
+    originalName: 
+    pivot: {x: 0.8000001, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 103
+      width: 25
+      height: 7
+    spriteID: ab68a7d492a224facbf78d005e0b7dce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 103}
+  - name: Fire bolt purple_Frame_11
+    originalName: 
+    pivot: {x: 0.516129, y: -1.1111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 4
+      width: 31
+      height: 9
+    spriteID: fc154da1bf8e04520b664660318eabeb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 4}
+  - name: Fire bolt purple_Frame_12
+    originalName: 
+    pivot: {x: -0.03999999, y: -1.4285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 4
+      width: 25
+      height: 7
+    spriteID: 554dd37491431414487bc125a18cc061
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 4}
+  - name: Fire bolt purple_Frame_13
+    originalName: 
+    pivot: {x: -0.76000005, y: -1.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 72
+      width: 25
+      height: 8
+    spriteID: f7e954ffac3d043928771e5c4ed14c3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 72}
+  - name: Fire bolt purple_Frame_14
+    originalName: 
+    pivot: {x: -1.5555555, y: 0.029411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 18
+      height: 34
+    spriteID: ab28a62f30e104933a699bc30c21f54e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Fire bolt purple_Frame_15
+    originalName: 
+    pivot: {x: -1.5555555, y: 0.03125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 18
+      height: 32
+    spriteID: 98390696c95cb4f08ae064ed653eaede
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 46}
+  - name: Fire bolt purple_Frame_16
+    originalName: 
+    pivot: {x: -2.7272725, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 4
+      width: 11
+      height: 30
+    spriteID: f3cf9aca720d54218829f1bb1f4970e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 4}
+  - name: Fire bolt purple_Frame_17
+    originalName: 
+    pivot: {x: -6.25, y: -2.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 118
+      width: 4
+      height: 4
+    spriteID: 629d5bc4412a24322b4c3adb38b16831
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 118}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 298095963
+    name: Fire bolt purple
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Fire bolt purple_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 12
+        width: 7
+        height: 7
+      spriteId: 23f50b3c7cf5c4f489d89a4b9b99736c
+    - name: Fire bolt purple_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
+        y: 8
+        width: 7
+        height: 16
+      spriteId: 5c68e4d4965bb4637b59446020e3e4cd
+    - name: Fire bolt purple_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 5
+        y: 5
+        width: 7
+        height: 23
+      spriteId: cc8fe8aead95146ac84b64478d47e598
+    - name: Fire bolt purple_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 5
+        y: 3
+        width: 8
+        height: 25
+      spriteId: 3a099c9bad65a429683395197999dfa8
+    - name: Fire bolt purple_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 5
+        y: 1
+        width: 8
+        height: 30
+      spriteId: fdf1789aecdef4009b2b813ed68559b3
+    - name: Fire bolt purple_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 4
+        y: -1
+        width: 14
+        height: 34
+      spriteId: 57df1cf63af1b4a91863659c360c5025
+    - name: Fire bolt purple_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 1
+        y: 9
+        width: 20
+        height: 11
+      spriteId: 3d3279993ed124a7f8e9da38e27c3695
+    - name: Fire bolt purple_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 5
+        y: 11
+        width: 25
+        height: 8
+      spriteId: 237385e2779d0492ab7d9cca29ab0651
+    - name: Fire bolt purple_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 8
+        y: 11
+        width: 27
+        height: 8
+      spriteId: cb92b8b47153e460c895cf30a7a27898
+    - name: Fire bolt purple_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 14
+        y: 11
+        width: 27
+        height: 7
+      spriteId: 63f5e2fa21d2c48b8b26d0ad0bb8e44b
+    - name: Fire bolt purple_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 26
+        y: 12
+        width: 25
+        height: 7
+      spriteId: ab68a7d492a224facbf78d005e0b7dce
+    - name: Fire bolt purple_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 30
+        y: 10
+        width: 31
+        height: 9
+      spriteId: fc154da1bf8e04520b664660318eabeb
+    - name: Fire bolt purple_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 47
+        y: 10
+        width: 25
+        height: 7
+      spriteId: 554dd37491431414487bc125a18cc061
+    - name: Fire bolt purple_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 65
+        y: 9
+        width: 25
+        height: 8
+      spriteId: f7e954ffac3d043928771e5c4ed14c3e
+    - name: Fire bolt purple_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 74
+        y: -1
+        width: 18
+        height: 34
+      spriteId: ab28a62f30e104933a699bc30c21f54e
+    - name: Fire bolt purple_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 74
+        y: -1
+        width: 18
+        height: 32
+      spriteId: 98390696c95cb4f08ae064ed653eaede
+    - name: Fire bolt purple_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 76
+        y: 2
+        width: 11
+        height: 30
+      spriteId: f3cf9aca720d54218829f1bb1f4970e2
+    - name: Fire bolt purple_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 71
+        y: 11
+        width: 4
+        height: 4
+      spriteId: 629d5bc4412a24322b4c3adb38b16831
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: Default
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 92, y: 32}

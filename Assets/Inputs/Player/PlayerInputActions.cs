@@ -55,7 +55,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""HardAttack"",
+                    ""name"": ""HardSkill"",
                     ""type"": ""Button"",
                     ""id"": ""8ab02d11-007b-4e0f-829c-792bf0eb0a1a"",
                     ""expectedControlType"": ""Button"",
@@ -64,7 +64,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RangeAttack"",
+                    ""name"": ""RangeSkill"",
                     ""type"": ""Button"",
                     ""id"": ""be21e85e-0545-4188-b3c4-e5847d209b45"",
                     ""expectedControlType"": ""Button"",
@@ -73,7 +73,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""StabAttack"",
+                    ""name"": ""StabSkill"",
                     ""type"": ""Button"",
                     ""id"": ""31428d97-f723-4397-b989-9fb44a312121"",
                     ""expectedControlType"": ""Button"",
@@ -134,7 +134,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HardAttack"",
+                    ""action"": ""HardSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -156,7 +156,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RangeAttack"",
+                    ""action"": ""RangeSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -167,7 +167,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""StabAttack"",
+                    ""action"": ""StabSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -198,9 +198,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Defense = m_Player.FindAction("Defense", throwIfNotFound: true);
         m_Player_NormalAttack = m_Player.FindAction("NormalAttack", throwIfNotFound: true);
-        m_Player_HardAttack = m_Player.FindAction("HardAttack", throwIfNotFound: true);
-        m_Player_RangeAttack = m_Player.FindAction("RangeAttack", throwIfNotFound: true);
-        m_Player_StabAttack = m_Player.FindAction("StabAttack", throwIfNotFound: true);
+        m_Player_HardSkill = m_Player.FindAction("HardSkill", throwIfNotFound: true);
+        m_Player_RangeSkill = m_Player.FindAction("RangeSkill", throwIfNotFound: true);
+        m_Player_StabSkill = m_Player.FindAction("StabSkill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -265,9 +265,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Defense;
     private readonly InputAction m_Player_NormalAttack;
-    private readonly InputAction m_Player_HardAttack;
-    private readonly InputAction m_Player_RangeAttack;
-    private readonly InputAction m_Player_StabAttack;
+    private readonly InputAction m_Player_HardSkill;
+    private readonly InputAction m_Player_RangeSkill;
+    private readonly InputAction m_Player_StabSkill;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -275,9 +275,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Defense => m_Wrapper.m_Player_Defense;
         public InputAction @NormalAttack => m_Wrapper.m_Player_NormalAttack;
-        public InputAction @HardAttack => m_Wrapper.m_Player_HardAttack;
-        public InputAction @RangeAttack => m_Wrapper.m_Player_RangeAttack;
-        public InputAction @StabAttack => m_Wrapper.m_Player_StabAttack;
+        public InputAction @HardSkill => m_Wrapper.m_Player_HardSkill;
+        public InputAction @RangeSkill => m_Wrapper.m_Player_RangeSkill;
+        public InputAction @StabSkill => m_Wrapper.m_Player_StabSkill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -296,15 +296,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @NormalAttack.started += instance.OnNormalAttack;
             @NormalAttack.performed += instance.OnNormalAttack;
             @NormalAttack.canceled += instance.OnNormalAttack;
-            @HardAttack.started += instance.OnHardAttack;
-            @HardAttack.performed += instance.OnHardAttack;
-            @HardAttack.canceled += instance.OnHardAttack;
-            @RangeAttack.started += instance.OnRangeAttack;
-            @RangeAttack.performed += instance.OnRangeAttack;
-            @RangeAttack.canceled += instance.OnRangeAttack;
-            @StabAttack.started += instance.OnStabAttack;
-            @StabAttack.performed += instance.OnStabAttack;
-            @StabAttack.canceled += instance.OnStabAttack;
+            @HardSkill.started += instance.OnHardSkill;
+            @HardSkill.performed += instance.OnHardSkill;
+            @HardSkill.canceled += instance.OnHardSkill;
+            @RangeSkill.started += instance.OnRangeSkill;
+            @RangeSkill.performed += instance.OnRangeSkill;
+            @RangeSkill.canceled += instance.OnRangeSkill;
+            @StabSkill.started += instance.OnStabSkill;
+            @StabSkill.performed += instance.OnStabSkill;
+            @StabSkill.canceled += instance.OnStabSkill;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -318,15 +318,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @NormalAttack.started -= instance.OnNormalAttack;
             @NormalAttack.performed -= instance.OnNormalAttack;
             @NormalAttack.canceled -= instance.OnNormalAttack;
-            @HardAttack.started -= instance.OnHardAttack;
-            @HardAttack.performed -= instance.OnHardAttack;
-            @HardAttack.canceled -= instance.OnHardAttack;
-            @RangeAttack.started -= instance.OnRangeAttack;
-            @RangeAttack.performed -= instance.OnRangeAttack;
-            @RangeAttack.canceled -= instance.OnRangeAttack;
-            @StabAttack.started -= instance.OnStabAttack;
-            @StabAttack.performed -= instance.OnStabAttack;
-            @StabAttack.canceled -= instance.OnStabAttack;
+            @HardSkill.started -= instance.OnHardSkill;
+            @HardSkill.performed -= instance.OnHardSkill;
+            @HardSkill.canceled -= instance.OnHardSkill;
+            @RangeSkill.started -= instance.OnRangeSkill;
+            @RangeSkill.performed -= instance.OnRangeSkill;
+            @RangeSkill.canceled -= instance.OnRangeSkill;
+            @StabSkill.started -= instance.OnStabSkill;
+            @StabSkill.performed -= instance.OnStabSkill;
+            @StabSkill.canceled -= instance.OnStabSkill;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -358,8 +358,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnDefense(InputAction.CallbackContext context);
         void OnNormalAttack(InputAction.CallbackContext context);
-        void OnHardAttack(InputAction.CallbackContext context);
-        void OnRangeAttack(InputAction.CallbackContext context);
-        void OnStabAttack(InputAction.CallbackContext context);
+        void OnHardSkill(InputAction.CallbackContext context);
+        void OnRangeSkill(InputAction.CallbackContext context);
+        void OnStabSkill(InputAction.CallbackContext context);
     }
 }

@@ -34,9 +34,9 @@ public class Player : MonoBehaviour
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int DefenseHash = Animator.StringToHash("Defense");
     readonly int NormalAttackHash = Animator.StringToHash("NormalAttack");
-    readonly int HardAttackHash = Animator.StringToHash("HardAttack");
-    readonly int RangeAttackHash = Animator.StringToHash("RangeAttack");
-    readonly int StabAttackHash = Animator.StringToHash("StabAttack");
+    readonly int HardSkillHash = Animator.StringToHash("HardSkill");
+    readonly int RangeSkillHash = Animator.StringToHash("RangeSkill");
+    readonly int StabSkillHash = Animator.StringToHash("StabSkill");
 
     private void Awake()
     {
@@ -65,26 +65,26 @@ public class Player : MonoBehaviour
         inputActions.Player.NormalAttack.performed += OnNormalAttackInput;
         inputActions.Player.NormalAttack.canceled += OnNormalAttackInput;
 
-        inputActions.Player.HardAttack.performed += OnHardAttackInput;
-        inputActions.Player.HardAttack.canceled += OnHardAttackInput;
+        inputActions.Player.HardSkill.performed += OnHardSkillInput;
+        inputActions.Player.HardSkill.canceled += OnHardSkillInput;
 
-        inputActions.Player.RangeAttack.performed += OnRangeAttackInput;
-        inputActions.Player.RangeAttack.canceled += OnRangeAttackInput;
+        inputActions.Player.RangeSkill.performed += OnRangeSkillInput;
+        inputActions.Player.RangeSkill.canceled += OnRangeSkillInput;
 
-        inputActions.Player.StabAttack.performed += OnStabAttackInput;
-        inputActions.Player.StabAttack.canceled += OnStabAttackInput;
+        inputActions.Player.StabSkill.performed += OnStabSkillInput;
+        inputActions.Player.StabSkill.canceled += OnStabSkillInput;
     }
 
     private void OnDisable()
     {
-        inputActions.Player.StabAttack.canceled -= OnStabAttackInput;
-        inputActions.Player.StabAttack.performed -= OnStabAttackInput;
+        inputActions.Player.StabSkill.canceled -= OnStabSkillInput;
+        inputActions.Player.StabSkill.performed -= OnStabSkillInput;
 
-        inputActions.Player.RangeAttack.canceled -= OnRangeAttackInput;
-        inputActions.Player.RangeAttack.performed -= OnRangeAttackInput;
+        inputActions.Player.RangeSkill.canceled -= OnRangeSkillInput;
+        inputActions.Player.RangeSkill.performed -= OnRangeSkillInput;
 
-        inputActions.Player.HardAttack.canceled -= OnHardAttackInput;
-        inputActions.Player.HardAttack.performed -= OnHardAttackInput;
+        inputActions.Player.HardSkill.canceled -= OnHardSkillInput;
+        inputActions.Player.HardSkill.performed -= OnHardSkillInput;
 
         inputActions.Player.NormalAttack.canceled -= OnNormalAttackInput;
         inputActions.Player.NormalAttack.performed -= OnNormalAttackInput;
@@ -114,19 +114,19 @@ public class Player : MonoBehaviour
         SetNormalAttackInput(!context.canceled);
     }
 
-    private void OnHardAttackInput(InputAction.CallbackContext context)
+    private void OnHardSkillInput(InputAction.CallbackContext context)
     {
-        SetHardAttackInput(!context.canceled);
+        SetHardSkillInput(!context.canceled);
     }
 
-    private void OnRangeAttackInput(InputAction.CallbackContext context)
+    private void OnRangeSkillInput(InputAction.CallbackContext context)
     {
-        SetRangeAttackInput(!context.canceled);
+        SetRangeSkillInput(!context.canceled);
     }
 
-    private void OnStabAttackInput(InputAction.CallbackContext context)
+    private void OnStabSkillInput(InputAction.CallbackContext context)
     {
-        SetStabAttackInput(!context.canceled);
+        SetStabSkillInput(!context.canceled);
     }
 
     void Move()
@@ -165,12 +165,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetHardAttackInput(bool IsHardAttack)
+    void SetHardSkillInput(bool IsHardSkill)
     {
-        if (IsHardAttack)
+        if (IsHardSkill)
         {
             Debug.Log("강공격 스킬 시작");
-            animator.SetTrigger(HardAttackHash);
+            animator.SetTrigger(HardSkillHash);
         }
         else
         {
@@ -178,25 +178,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetRangeAttackInput(bool IsRangeAttack)
+    private void SetRangeSkillInput(bool IsRangeSkill)
     {
-        if (IsRangeAttack)
+        if (IsRangeSkill)
         {
-            Debug.Log("범위 공격 스킬 시작");
-            animator.SetTrigger(RangeAttackHash);
+            Debug.Log("범위 스킬 시작");
+            animator.SetTrigger(RangeSkillHash);
         }
         else
         {
-            Debug.Log("범위 공격 스킬 종료");
+            Debug.Log("범위 스킬 종료");
         }
     }
 
-    private void SetStabAttackInput(bool IsStabAttack)
+    private void SetStabSkillInput(bool IsStabSkill)
     {
-        if (IsStabAttack)
+        if (IsStabSkill)
         {
             Debug.Log("찌르기 스킬 시작");
-            animator.SetTrigger(StabAttackHash);
+            animator.SetTrigger(StabSkillHash);
         }
         else
         {

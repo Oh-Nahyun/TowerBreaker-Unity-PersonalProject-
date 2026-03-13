@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: 88da9e90745115946bfaf1da18aec4ee
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 92
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638870775605285224
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Fire bolt base_Frame_0
+    originalName: 
+    pivot: {x: 6.571429, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 113
+      width: 7
+      height: 7
+    spriteID: 498222fd5c4b04c95a3bd505795da57c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 113}
+  - name: Fire bolt base_Frame_1
+    originalName: 
+    pivot: {x: 6.2857146, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 50
+      width: 7
+      height: 16
+    spriteID: ebcbaba850dfc41f1967ee4ad84087ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 50}
+  - name: Fire bolt base_Frame_2
+    originalName: 
+    pivot: {x: 5.8571434, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 19
+      width: 7
+      height: 23
+    spriteID: cb616aac6cd4740fab67d8ddb67baf37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 19}
+  - name: Fire bolt base_Frame_3
+    originalName: 
+    pivot: {x: 5.125, y: -0.12}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 80
+      width: 8
+      height: 25
+    spriteID: 60994e14b9eb14e9a88ab7db7cb9e223
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 80}
+  - name: Fire bolt base_Frame_4
+    originalName: 
+    pivot: {x: 5.125, y: -0.033333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 42
+      width: 8
+      height: 30
+    spriteID: b581c2d680c6a4e9d8ae867677a006b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 42}
+  - name: Fire bolt base_Frame_5
+    originalName: 
+    pivot: {x: 3.0000002, y: 0.029411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 86
+      width: 14
+      height: 34
+    spriteID: 338b8cdef56ba4a81baf8f404203b3c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 86}
+  - name: Fire bolt base_Frame_6
+    originalName: 
+    pivot: {x: 2.25, y: -0.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 21
+      width: 20
+      height: 11
+    spriteID: e8e836c0bae5041ab86a640e3bc53b9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 21}
+  - name: Fire bolt base_Frame_7
+    originalName: 
+    pivot: {x: 1.6400001, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 56
+      width: 25
+      height: 8
+    spriteID: 87b865b91b8c84431a612dcaaae9c895
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 56}
+  - name: Fire bolt base_Frame_8
+    originalName: 
+    pivot: {x: 1.4074074, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 40
+      width: 27
+      height: 8
+    spriteID: 2b5e89107e0414e38926db26fbf63664
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 40}
+  - name: Fire bolt base_Frame_9
+    originalName: 
+    pivot: {x: 1.1851852, y: -1.5714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 88
+      width: 27
+      height: 7
+    spriteID: 9c720091b88fe466485ecca81ad2e984
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 88}
+  - name: Fire bolt base_Frame_10
+    originalName: 
+    pivot: {x: 0.8000001, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 103
+      width: 25
+      height: 7
+    spriteID: afaa1b25411e74e9082074b73c72746f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 103}
+  - name: Fire bolt base_Frame_11
+    originalName: 
+    pivot: {x: 0.516129, y: -1.1111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 4
+      width: 31
+      height: 9
+    spriteID: 06cee2698576a4367b6e214769ec76b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 4}
+  - name: Fire bolt base_Frame_12
+    originalName: 
+    pivot: {x: -0.03999999, y: -1.4285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 4
+      width: 25
+      height: 7
+    spriteID: 63d0ff18282fc44d28c30ab38cf26906
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 4}
+  - name: Fire bolt base_Frame_13
+    originalName: 
+    pivot: {x: -0.76000005, y: -1.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 72
+      width: 25
+      height: 8
+    spriteID: c64d6eedc1ad64e15aa62c8b8b936b6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 72}
+  - name: Fire bolt base_Frame_14
+    originalName: 
+    pivot: {x: -1.5555555, y: 0.029411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 18
+      height: 34
+    spriteID: abe3503733cd24067aa34d3d73b970d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Fire bolt base_Frame_15
+    originalName: 
+    pivot: {x: -1.5555555, y: 0.03125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 18
+      height: 32
+    spriteID: 5d8faef6235034e97bd3518b7bb8608c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 46}
+  - name: Fire bolt base_Frame_16
+    originalName: 
+    pivot: {x: -2.7272725, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 4
+      width: 11
+      height: 30
+    spriteID: 90c31653f285f4489ab3f906c1b304e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 4}
+  - name: Fire bolt base_Frame_17
+    originalName: 
+    pivot: {x: -6.25, y: -2.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 118
+      width: 4
+      height: 4
+    spriteID: a0bc4fba64ebf455ab5aea7d8b153b85
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 118}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1547780670
+    name: Fire bolt base
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Fire bolt base_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 12
+        width: 7
+        height: 7
+      spriteId: 498222fd5c4b04c95a3bd505795da57c
+    - name: Fire bolt base_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
+        y: 8
+        width: 7
+        height: 16
+      spriteId: ebcbaba850dfc41f1967ee4ad84087ce
+    - name: Fire bolt base_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 5
+        y: 5
+        width: 7
+        height: 23
+      spriteId: cb616aac6cd4740fab67d8ddb67baf37
+    - name: Fire bolt base_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 5
+        y: 3
+        width: 8
+        height: 25
+      spriteId: 60994e14b9eb14e9a88ab7db7cb9e223
+    - name: Fire bolt base_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 5
+        y: 1
+        width: 8
+        height: 30
+      spriteId: b581c2d680c6a4e9d8ae867677a006b2
+    - name: Fire bolt base_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 4
+        y: -1
+        width: 14
+        height: 34
+      spriteId: 338b8cdef56ba4a81baf8f404203b3c8
+    - name: Fire bolt base_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 1
+        y: 9
+        width: 20
+        height: 11
+      spriteId: e8e836c0bae5041ab86a640e3bc53b9a
+    - name: Fire bolt base_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 5
+        y: 11
+        width: 25
+        height: 8
+      spriteId: 87b865b91b8c84431a612dcaaae9c895
+    - name: Fire bolt base_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 8
+        y: 11
+        width: 27
+        height: 8
+      spriteId: 2b5e89107e0414e38926db26fbf63664
+    - name: Fire bolt base_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 14
+        y: 11
+        width: 27
+        height: 7
+      spriteId: 9c720091b88fe466485ecca81ad2e984
+    - name: Fire bolt base_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 26
+        y: 12
+        width: 25
+        height: 7
+      spriteId: afaa1b25411e74e9082074b73c72746f
+    - name: Fire bolt base_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 30
+        y: 10
+        width: 31
+        height: 9
+      spriteId: 06cee2698576a4367b6e214769ec76b2
+    - name: Fire bolt base_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 47
+        y: 10
+        width: 25
+        height: 7
+      spriteId: 63d0ff18282fc44d28c30ab38cf26906
+    - name: Fire bolt base_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 65
+        y: 9
+        width: 25
+        height: 8
+      spriteId: c64d6eedc1ad64e15aa62c8b8b936b6e
+    - name: Fire bolt base_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 74
+        y: -1
+        width: 18
+        height: 34
+      spriteId: abe3503733cd24067aa34d3d73b970d3
+    - name: Fire bolt base_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 74
+        y: -1
+        width: 18
+        height: 32
+      spriteId: 5d8faef6235034e97bd3518b7bb8608c
+    - name: Fire bolt base_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 76
+        y: 2
+        width: 11
+        height: 30
+      spriteId: 90c31653f285f4489ab3f906c1b304e9
+    - name: Fire bolt base_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 71
+        y: 11
+        width: 4
+        height: 4
+      spriteId: a0bc4fba64ebf455ab5aea7d8b153b85
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: Default
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 92, y: 32}
