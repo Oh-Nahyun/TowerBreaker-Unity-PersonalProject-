@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        swordSoldier = FindAnyObjectByType<SwordSoldier>();
+        swordSoldier = collision.GetComponent<SwordSoldier>();
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
