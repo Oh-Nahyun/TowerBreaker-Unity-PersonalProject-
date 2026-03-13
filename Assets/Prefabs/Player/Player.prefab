@@ -4202,6 +4202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   projectilePrefab: {fileID: 4891780971573526544, guid: f5af0a479b17947af95bf74bd3dc6cde, type: 3}
+  isOnAttack: 0
 --- !u!1 &2034921415427146200
 GameObject:
   m_ObjectHideFlags: 0
@@ -7831,6 +7832,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3611933071081220688, guid: ec5154c2cfc29478f974d2844a433e1c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4537896251595780390}
     - target: {fileID: 6937071988059292463, guid: ec5154c2cfc29478f974d2844a433e1c, type: 3}
       propertyPath: m_Name
       value: Weapon

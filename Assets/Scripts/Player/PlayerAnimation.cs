@@ -13,4 +13,16 @@ public class PlayerAnimation : MonoBehaviour
     {
         player.FireProjectile();
     }
+
+    public void ChangeAttackMode()
+    {
+        if (player.isOnAttack)
+        {
+            player.isOnAttack = false;
+        }
+        else
+        {
+            player.isOnAttack = true;
+        }
+    }
 }

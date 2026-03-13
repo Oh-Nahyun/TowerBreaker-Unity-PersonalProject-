@@ -53,6 +53,11 @@ public class Player : MonoBehaviour
     /// </summary>
     Transform projectileTransform;
 
+    /// <summary>
+    /// 플레이어 공격 상태
+    /// </summary>
+    public bool isOnAttack = false;
+
     private void Awake()
     {
         inputActions = new PlayerInputActions();

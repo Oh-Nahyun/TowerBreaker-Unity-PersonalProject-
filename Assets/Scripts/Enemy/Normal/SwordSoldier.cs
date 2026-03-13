@@ -34,4 +34,9 @@ public class SwordSoldier : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x - Time.deltaTime * moveSpeed, 0.0f, 0.0f);
     }
+
+    public bool IsAlive()
+    {
+        return health > 0;
+    }
 }
