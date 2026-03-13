@@ -14,22 +14,22 @@ public class Player : MonoBehaviour
     PlayerInputActions inputActions;
 
     /// <summary>
-    /// 애니메이터
+    /// 플레이어 애니메이터
     /// </summary>
     Animator animator;
 
     /// <summary>
-    /// 이동 속도
+    /// 플레이어 이동 속도
     /// </summary>
     public float moveSpeed = 0.1f;
 
     /// <summary>
-    /// 이동 방향
+    /// 플레이어 이동 방향
     /// </summary>
     Vector3 inputDir = Vector3.zero;
 
     /// <summary>
-    /// 애니메이터용 해시값
+    /// 플레이어 애니메이터용 해시값
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int DefenseHash = Animator.StringToHash("Defense");
@@ -38,13 +38,22 @@ public class Player : MonoBehaviour
     readonly int RangeSkillHash = Animator.StringToHash("RangeSkill");
     readonly int StabSkillHash = Animator.StringToHash("StabSkill");
 
+    /// <summary>
+    /// 스킬 발사체 프리팹
+    /// </summary>
+    public GameObject projectilePrefab;
+
+    /// <summary>
+    /// 스킬 발사체 발사 위치
+    /// </summary>
+    Transform projectileTransform;
+
     private void Awake()
     {
         inputActions = new PlayerInputActions();
-        if (animator == null)
-        {
-            animator = GetComponentInChildren<Animator>();
-        }
+        animator = GetComponentInChildren<Animator>();
+
+        projectileTransform = transform.GetChild(1);
     }
 
     private void FixedUpdate()
@@ -129,11 +138,6 @@ public class Player : MonoBehaviour
         SetStabSkillInput(!context.canceled);
     }
 
-    void Move()
-    {
-        transform.Translate(Time.deltaTime * moveSpeed * inputDir, Space.World);
-    }
-
     void SetMoveInput(bool IsMove)
     {
         animator.SetBool(IsMoveHash, IsMove);
@@ -202,5 +206,15 @@ public class Player : MonoBehaviour
         {
             Debug.Log("찌르기 스킬 종료");
         }
+    }
+
+    private void Move()
+    {
+        transform.Translate(Time.deltaTime * moveSpeed * inputDir, Space.World);
+    }
+
+    public void FireProjectile()
+    {
+        Instantiate(projectilePrefab, projectileTransform.position, Quaternion.identity);
     }
 }

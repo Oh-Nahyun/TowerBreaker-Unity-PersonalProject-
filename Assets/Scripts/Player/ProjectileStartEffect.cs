@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ProjectileStartEffect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// 발사체 발사 애니메이터
+    /// </summary>
+    Animator animator;
+
+    /// <summary>
+    /// 발사체 발사 애니메이션 길이
+    /// </summary>
+    float startAnimLength = 0.0f;
+
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        startAnimLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Destroy(this.gameObject, startAnimLength);
     }
 }
