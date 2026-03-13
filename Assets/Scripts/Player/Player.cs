@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     Animator animator;
 
     /// <summary>
+    /// 플레이어 리지드바디
+    /// </summary>
+    Rigidbody2D rigid2D;
+
+    /// <summary>
     /// 플레이어 이동 속도
     /// </summary>
     public float moveSpeed = 0.1f;
@@ -26,7 +31,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 플레이어 이동 방향
     /// </summary>
-    Vector3 inputDir = Vector3.zero;
+    Vector2 inputDir = Vector2.zero;
 
     /// <summary>
     /// 플레이어 애니메이터용 해시값
@@ -52,6 +57,7 @@ public class Player : MonoBehaviour
     {
         inputActions = new PlayerInputActions();
         animator = GetComponentInChildren<Animator>();
+        rigid2D = GetComponent<Rigidbody2D>();
 
         projectileTransform = transform.GetChild(1);
     }
@@ -210,7 +216,8 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Time.deltaTime * moveSpeed * inputDir, Space.World);
+        Vector2 newPosition = rigid2D.position + Time.fixedDeltaTime * moveSpeed * inputDir;
+        rigid2D.MovePosition(newPosition);
     }
 
     public void FireProjectile()
