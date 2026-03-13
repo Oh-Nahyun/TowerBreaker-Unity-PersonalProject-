@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3932994548129839345}
   - component: {fileID: 7822362681739837358}
-  - component: {fileID: 5284803204744282189}
+  - component: {fileID: 4159146047835785646}
   - component: {fileID: -6172665584369549082}
   m_Layer: 6
   m_Name: Projectile
@@ -62,8 +62,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5284803204744282189
-CircleCollider2D:
+--- !u!70 &4159146047835785646
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,9 +94,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23, y: 0.16}
-  serializedVersion: 2
-  m_Radius: 0.05
+  m_Offset: {x: -0.31, y: 0.16}
+  m_Size: {x: 0.25, y: 0.2}
+  m_Direction: 1
 --- !u!114 &-6172665584369549082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff93a7d397190453b932f32eb0014a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.5
+  moveSpeed: 2
   startEffectPrefab: {fileID: 9048171323452961283, guid: 260f9de2744c9428da057b5586e8bfd9, type: 3}
   endEffectPrefab: {fileID: 1500953225828951875, guid: b446d054a8121452ca6479fcbd7b79dc, type: 3}
   lifeTime: 10
@@ -187,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 2037098598805624702, guid: 37b28773cfbe515488d462d392a04bca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

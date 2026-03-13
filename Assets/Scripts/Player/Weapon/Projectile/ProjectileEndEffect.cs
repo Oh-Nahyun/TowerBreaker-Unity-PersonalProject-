@@ -16,7 +16,7 @@ public class ProjectileEndEffect : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         endAnimLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }
 

@@ -57,9 +57,18 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             swordSoldier.health -= attackPower;
+
             if (!swordSoldier.IsAlive())
             {
                 swordSoldier.Die();
+            }
+
+            Destroy(gameObject);
+
+            if (endEffectPrefab != null)
+            {
+                GameObject endEffect = Instantiate(endEffectPrefab, transform.position, Quaternion.identity);
+                Destroy(endEffect, 0.5f);
             }
         }
     }
