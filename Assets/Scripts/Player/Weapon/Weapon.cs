@@ -14,6 +14,11 @@ public class Weapon : MonoBehaviour
     /// </summary>
     SwordSoldier swordSoldier;
 
+    /// <summary>
+    /// 무기 공격력
+    /// </summary>
+    public int attackPower = 100;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!player.isOnAttack)
@@ -23,10 +28,13 @@ public class Weapon : MonoBehaviour
 
         swordSoldier = FindAnyObjectByType<SwordSoldier>();
 
-        if (collision.gameObject.CompareTag("Enemy") && swordSoldier.IsAlive())
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            swordSoldier.health = 0;
-            swordSoldier.Die();
+            swordSoldier.health -= attackPower;
+            if (!swordSoldier.IsAlive())
+            {
+                swordSoldier.Die();
+            }
         }
     }
 }

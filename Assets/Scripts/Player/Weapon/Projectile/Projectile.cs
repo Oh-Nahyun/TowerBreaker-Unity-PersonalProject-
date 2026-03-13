@@ -25,6 +25,16 @@ public class Projectile : MonoBehaviour
     /// </summary>
     public float lifeTime = 10.0f;
 
+    /// <summary>
+    /// 적 검병
+    /// </summary>
+    SwordSoldier swordSoldier;
+
+    /// <summary>
+    /// 발사체 공격력
+    /// </summary>
+    public int attackPower = 100;
+
     private void Start()
     {
         if (startEffectPrefab != null)
@@ -38,5 +48,19 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         transform.Translate(Time.deltaTime * moveSpeed * Vector2.right, Space.World);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        swordSoldier = FindAnyObjectByType<SwordSoldier>();
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            swordSoldier.health -= attackPower;
+            if (!swordSoldier.IsAlive())
+            {
+                swordSoldier.Die();
+            }
+        }
     }
 }

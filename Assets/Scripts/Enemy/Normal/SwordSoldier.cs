@@ -55,7 +55,7 @@ public class SwordSoldier : MonoBehaviour
     /// <summary>
     /// 검병 사망 시 알파값
     /// </summary>
-    float deathColorAlpha = 0.0f;
+    public float deathColorAlpha = 0.0f;
 
     /// <summary>
     /// 검병 사망 시 알파값 변경 시간
