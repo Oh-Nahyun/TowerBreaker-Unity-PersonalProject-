@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4986157695956978830}
   - component: {fileID: 7595068604195401458}
   - component: {fileID: -3787511938846781992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileStartEffect
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
