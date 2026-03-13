@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
     readonly int AttackHash = Animator.StringToHash("Attack");
+    readonly int DefenseHash = Animator.StringToHash("Defense");
 
     private void Awake()
     {
@@ -120,6 +121,7 @@ public class Player : MonoBehaviour
         if (IsDefense)
         {
             Debug.Log("방어 시작");
+            animator.SetTrigger(DefenseHash);
         }
         else
         {
