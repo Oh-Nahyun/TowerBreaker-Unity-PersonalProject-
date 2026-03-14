@@ -12,7 +12,8 @@ public class FireFlameStartEffect : MonoBehaviour
     /// <summary>
     /// 불꽃 손 시작 애니메이션 길이
     /// </summary>
-    public float startAnimLength = 0.0f;
+    float startAnimLength = 0.0f;
+    public float StartAnimLength => startAnimLength;
 
     private void Awake()
     {
@@ -22,6 +23,6 @@ public class FireFlameStartEffect : MonoBehaviour
 
     private void Start()
     {
-        Destroy(this.gameObject, startAnimLength * 2);
+        Destroy(gameObject, startAnimLength * 2);
     }
 }

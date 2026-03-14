@@ -22,6 +22,6 @@ public class ProjectileStartEffect : MonoBehaviour
 
     private void Start()
     {
-        Destroy(this.gameObject, startAnimLength);
+        Destroy(gameObject, startAnimLength);
     }
 }

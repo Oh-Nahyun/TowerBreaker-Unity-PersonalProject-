@@ -24,24 +24,14 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid2d;
 
     /// <summary>
-    /// 플레이어 이동 속도
-    /// </summary>
-    public float moveSpeed = 0.1f;
-
-    /// <summary>
     /// 플레이어 이동 방향
     /// </summary>
     Vector2 inputDir = Vector2.zero;
 
     /// <summary>
-    /// 플레이어 애니메이터용 해시값
+    /// 플레이어 이동 속도
     /// </summary>
-    readonly int IsMoveHash = Animator.StringToHash("IsMove");
-    readonly int DefenseHash = Animator.StringToHash("Defense");
-    readonly int NormalAttackHash = Animator.StringToHash("NormalAttack");
-    readonly int HardSkillHash = Animator.StringToHash("HardSkill");
-    readonly int RangeSkillHash = Animator.StringToHash("RangeSkill");
-    readonly int StabSkillHash = Animator.StringToHash("StabSkill");
+    public float moveSpeed = 0.1f;
 
     /// <summary>
     /// 스킬 발사체 프리팹
@@ -59,14 +49,19 @@ public class Player : MonoBehaviour
     public GameObject skillSpawnPoint;
 
     /// <summary>
-    /// 스킬 범위 지정
-    /// </summary>
-    public Vector3 rangeSkillPosition = Vector3.zero;
-
-    /// <summary>
     /// 플레이어 공격 상태
     /// </summary>
     public bool isOnAttack = false;
+
+    /// <summary>
+    /// 플레이어 애니메이터용 해시값
+    /// </summary>
+    readonly int IsMoveHash = Animator.StringToHash("IsMove");
+    readonly int DefenseHash = Animator.StringToHash("Defense");
+    readonly int NormalAttackHash = Animator.StringToHash("NormalAttack");
+    readonly int HardSkillHash = Animator.StringToHash("HardSkill");
+    readonly int RangeSkillHash = Animator.StringToHash("RangeSkill");
+    readonly int StabSkillHash = Animator.StringToHash("StabSkill");
 
     private void Awake()
     {
@@ -235,7 +230,7 @@ public class Player : MonoBehaviour
 
     public void FireFlameHand()
     {
-        Instantiate(flameHandPrefab, skillSpawnPoint.transform.position + rangeSkillPosition, Quaternion.identity);
+        Instantiate(flameHandPrefab, skillSpawnPoint.transform.position, Quaternion.identity);
     }
 
     public void FireProjectile()

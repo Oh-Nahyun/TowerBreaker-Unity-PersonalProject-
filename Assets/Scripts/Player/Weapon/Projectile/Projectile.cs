@@ -6,6 +6,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     /// <summary>
+    /// 적 검병
+    /// </summary>
+    SwordSoldier swordSoldier;
+
+    /// <summary>
     /// 발사체 이동 속도
     /// </summary>
     public float moveSpeed = 5.0f;
@@ -24,11 +29,6 @@ public class Projectile : MonoBehaviour
     /// 발사체 수명
     /// </summary>
     public float lifeTime = 10.0f;
-
-    /// <summary>
-    /// 적 검병
-    /// </summary>
-    SwordSoldier swordSoldier;
 
     /// <summary>
     /// 발사체 공격력

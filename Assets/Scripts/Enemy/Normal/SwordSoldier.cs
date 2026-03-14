@@ -47,12 +47,6 @@ public class SwordSoldier : MonoBehaviour
     }
 
     /// <summary>
-    /// 검병 애니메이터용 해시값
-    /// </summary>
-    readonly int IsDeathHash = Animator.StringToHash("IsDeath");
-    readonly int DeathHash = Animator.StringToHash("Death");
-
-    /// <summary>
     /// 검병 사망 시 알파값
     /// </summary>
     public float deathColorAlpha = 0.0f;
@@ -61,6 +55,12 @@ public class SwordSoldier : MonoBehaviour
     /// 검병 사망 시 알파값 변경 시간
     /// </summary>
     float changeColorDuration = 1.0f;
+
+    /// <summary>
+    /// 검병 애니메이터용 해시값
+    /// </summary>
+    readonly int IsDeathHash = Animator.StringToHash("IsDeath");
+    readonly int DeathHash = Animator.StringToHash("Death");
 
     private void Awake()
     {
