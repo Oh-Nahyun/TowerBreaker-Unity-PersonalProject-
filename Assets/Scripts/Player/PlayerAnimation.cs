@@ -9,6 +9,11 @@ public class PlayerAnimation : MonoBehaviour
     /// </summary>
     public Player player;
 
+    public void FireWindGround()
+    {
+        player.FireWindGround();
+    }
+
     public void FireFlameHand()
     {
         player.FireFlameHand();

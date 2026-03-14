@@ -34,9 +34,9 @@ public class Player : MonoBehaviour
     public float moveSpeed = 0.1f;
 
     /// <summary>
-    /// 스킬 발사체 프리팹
+    /// 스킬 바람 프리팹
     /// </summary>
-    public GameObject projectilePrefab;
+    public GameObject windGroundPrefab;
 
     /// <summary>
     /// 스킬 불꽃 손 프리팹
@@ -44,14 +44,24 @@ public class Player : MonoBehaviour
     public GameObject flameHandPrefab;
 
     /// <summary>
-    /// 찌르기 스킬 시작 위치
+    /// 스킬 발사체 프리팹
     /// </summary>
-    public GameObject stabSkillSpawnPoint;
+    public GameObject projectilePrefab;
+
+    /// <summary>
+    /// 강공격 스킬 시작 위치
+    /// </summary>
+    public GameObject hardSkillSpawnPoint;
 
     /// <summary>
     /// 범위 스킬 시작 위치
     /// </summary>
     public GameObject rangeSkillSpawnPoint;
+
+    /// <summary>
+    /// 찌르기 스킬 시작 위치
+    /// </summary>
+    public GameObject stabSkillSpawnPoint;
 
     /// <summary>
     /// 플레이어 공격 상태
@@ -231,6 +241,11 @@ public class Player : MonoBehaviour
     {
         Vector2 newPosition = rigid2d.position + Time.fixedDeltaTime * moveSpeed * inputDir;
         rigid2d.MovePosition(newPosition);
+    }
+
+    public void FireWindGround()
+    {
+        Instantiate(windGroundPrefab, hardSkillSpawnPoint.transform.position, Quaternion.identity);
     }
 
     public void FireFlameHand()
