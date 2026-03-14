@@ -38,14 +38,17 @@ public class ShieldEndEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        Debug.Log("방어 범위 안으로 적 들어옴!");
         swordSoldiers = FindObjectsByType<SwordSoldier>(FindObjectsSortMode.None);
 
         for (int i = 0; i < swordSoldiers.Length; i++)
         {
-            if (swordSoldiers[i].gameObject.CompareTag("Enemy"))
-            {
-                swordSoldiers[i].transform.position += movePosition;
-            }
+            swordSoldiers[i].transform.position += movePosition;
         }
     }
 }
