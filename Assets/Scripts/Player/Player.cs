@@ -24,14 +24,19 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid2d;
 
     /// <summary>
+    /// 플레이어 리지드바디 타입
+    /// </summary>
+    RigidbodyType2D rigid2dType;
+
+    /// <summary>
     /// 플레이어 콜라이더
     /// </summary>
     Collider2D collider2d;
 
     /// <summary>
-    /// 적 검병 배열
+    /// 적 배열
     /// </summary>
-    SwordSoldier[] swordSoldiers;
+    Enemy[] enemy;
 
     /// <summary>
     /// 플레이어 이동 속도
@@ -93,6 +98,16 @@ public class Player : MonoBehaviour
     /// 플레이어 공격 상태
     /// </summary>
     public bool isOnAttack = false;
+
+    /// <summary>
+    /// 플레이어 넉백 상태
+    /// </summary>
+    private bool isOnKnockback = false;
+
+    /// <summary>
+    /// 플레이어 넉백 시간
+    /// </summary>
+    private float knockbackDuration = 0.1f;
 
     /// <summary>
     /// 플레이어 일반 공격 사용 상태
@@ -242,7 +257,7 @@ public class Player : MonoBehaviour
 
     void SetMoveInput(bool IsMove)
     {
-        if (!IsAlive() || isOnAttack || isOnMove)
+        if (!IsAlive() || isOnAttack || isOnMove || isOnKnockback)
         {
             return;
         }
@@ -260,7 +275,7 @@ public class Player : MonoBehaviour
 
     void SetDefenseInput(bool IsDefense)
     {
-        if (!IsAlive() || isOnAttack || isOnDefense)
+        if (!IsAlive() || isOnAttack || isOnDefense || isOnKnockback)
         {
             return;
         }
@@ -353,6 +368,33 @@ public class Player : MonoBehaviour
         collider2d.enabled = false;
     }
 
+    public void TakeKnockback(float knockbackDistance)
+    {
+        if (isOnKnockback)
+        {
+            return;
+        }
+
+        StartCoroutine(KnockbackCoroutine(Vector2.left, knockbackDistance, knockbackDuration));
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isOnDefense || !collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        enemy = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            enemy[i].transform.position += movePosition;
+        }
+
+        StartCoroutine(RunCoroutine(defenseSpeed, defenseDuration, Vector2.left));
+    }
+
     private IEnumerator RunCoroutine(float runSpeed, float runDuration, Vector2 runDirection)
     {
         float currentTime = 0.0f;
@@ -383,23 +425,6 @@ public class Player : MonoBehaviour
         isOnDefense = false;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (!isOnDefense || !collision.gameObject.CompareTag("Enemy"))
-        {
-            return;
-        }
-
-        swordSoldiers = FindObjectsByType<SwordSoldier>(FindObjectsSortMode.None);
-
-        for (int i = 0; i < swordSoldiers.Length; i++)
-        {
-            swordSoldiers[i].transform.position += movePosition;
-        }
-
-        StartCoroutine(RunCoroutine(defenseSpeed, defenseDuration, Vector2.left));
-    }
-
     private IEnumerator NormalAttackCoroutine()
     {
         while (isNormalAttacking)
@@ -407,6 +432,38 @@ public class Player : MonoBehaviour
             animator.SetTrigger(NormalAttackHash);
             yield return new WaitForSeconds(normalAttackIntercal);
         }
+    }
+
+    private IEnumerator KnockbackCoroutine(Vector2 knockbackDirection, float knockbackDistance, float knockbackDuration)
+    {
+        isOnKnockback = true;
+
+        rigid2dType = rigid2d.bodyType;
+        rigid2d.bodyType = RigidbodyType2D.Kinematic;
+        rigid2d.velocity = Vector2.zero;
+        rigid2d.angularVelocity = 0.0f;
+
+        Vector2 startPosition = rigid2d.position;
+        Vector2 targetPosition = startPosition + knockbackDirection * knockbackDistance;
+
+        float currentTime = 0.0f;
+        while (currentTime < knockbackDuration)
+        {
+            currentTime += Time.fixedDeltaTime;
+            float time = currentTime / knockbackDuration;
+
+            Vector2 nextPosition = Vector2.Lerp(startPosition, targetPosition, time);
+            rigid2d.MovePosition(nextPosition);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        rigid2d.MovePosition(targetPosition);
+        rigid2d.bodyType = rigid2dType;
+        rigid2d.velocity = Vector2.zero;
+        rigid2d.angularVelocity = 0.0f;
+
+        isOnKnockback = false;
     }
 
     public void PlayDefenseEffect()

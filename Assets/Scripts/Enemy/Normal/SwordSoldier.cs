@@ -3,139 +3,134 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class SwordSoldier : MonoBehaviour
+public class SwordSoldier : Enemy
 {
-    /// <summary>
-    /// 검병 애니메이터
-    /// </summary>
-    Animator animator;
-
-    /// <summary>
-    /// 검병 콜라이더
-    /// </summary>
-    Collider2D collider2d;
-
-    /// <summary>
-    /// 검병 스프라이트들
-    /// </summary>
-    SpriteRenderer[] spriteRenderers;
-
     /// <summary>
     /// 검병 이동 속도
     /// </summary>
     public float moveSpeed = 1.0f;
 
     /// <summary>
-    /// 검병 체력
+    /// 검병 돌진 속도
     /// </summary>
-    public int health = 100;
-    public int Health
-    {
-        get => health;
-        private set
-        {
-            if (health != value)
-            {
-                health = Mathf.Min(value, 100);
-            }
-
-            if (health <= 0)
-            {
-                health = 0;
-            }
-        }
-    }
+    public float dashSpeed = 2.0f;
 
     /// <summary>
-    /// 검병 사망 시 알파값
+    /// 검병 돌진 후 넉백 거리
     /// </summary>
-    public float deathColorAlpha = 0.0f;
+    public float knockbackDistanceafterdash = 0.1f;
 
     /// <summary>
-    /// 검병 사망 시 알파값 변경 시간
+    /// 검병 돌진 시간
     /// </summary>
-    float changeColorDuration = 1.0f;
+    public float dashDuration = 1.0f;
+
+    /// <summary>
+    /// 검병 돌진 전 준비 시간
+    /// </summary>
+    public float dashBeforePrepareTime = 0.25f;
+
+    /// <summary>
+    /// 검병 돌진 쿨타임
+    /// </summary>
+    public float dashCoolTime = 3.0f;
+
+    /// <summary>
+    /// 검병 돌진 상태
+    /// </summary>
+    private bool isOnDash = false;
+
+    /// <summary>
+    /// 검병 돌진 쿨타임 상태
+    /// </summary>
+    private bool isInDashCoolTime = false;
+
+    /// <summary>
+    /// 검병 돌진 시 플레이어 충돌 상태
+    /// </summary>
+    private bool hasHitPlayer = false;
 
     /// <summary>
     /// 검병 애니메이터용 해시값
     /// </summary>
-    readonly int IsDeathHash = Animator.StringToHash("IsDeath");
-    readonly int DeathHash = Animator.StringToHash("Death");
+    protected readonly int IsDashHash = Animator.StringToHash("IsDash");
 
-    private void Awake()
+    private void FixedUpdate()
     {
-        animator = GetComponentInChildren<Animator>();
-        collider2d = GetComponentInChildren<Collider2D>();
-        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-    }
-
-    private void Start()
-    {
-        animator.SetBool(IsDeathHash, IsAlive());
-    }
-
-    private void Update()
-    {
-        if (IsAlive())
+        if (!IsAlive() || isOnDash)
         {
-            transform.position = new Vector3(transform.position.x - Time.deltaTime * moveSpeed, transform.position.y, 0.0f);
-        }
-    }
-
-    public bool IsAlive()
-    {
-        return health > 0;
-    }
-
-    public void Die()
-    {
-        animator.SetBool(IsDeathHash, !IsAlive());
-        animator.SetTrigger(DeathHash);
-
-        DisableCollider();
-        StartCoroutine(DieProcessCoroutine());
-    }
-
-    private void DisableCollider()
-    {
-        collider2d.enabled = false;
-    }
-
-    private IEnumerator DieProcessCoroutine()
-    {
-        yield return StartCoroutine(ChangeColorCoroutine());
-        Destroy(gameObject);
-    }
-
-    private IEnumerator ChangeColorCoroutine()
-    {
-        Color[] spriteColors = new Color[spriteRenderers.Length];
-        for (int i = 0; i < spriteRenderers.Length; i++)
-        {
-            spriteColors[i] = spriteRenderers[i].color;
+            return;
         }
 
-        float currentTime = 0.0f;
-        while (currentTime < changeColorDuration)
-        {
-            currentTime += Time.deltaTime;
-            float time = currentTime / changeColorDuration;
+        Move();
+    }
 
-            for (int i = 0; i < spriteRenderers.Length; i++)
+    private void Move()
+    {
+        Vector2 nextPosition = rigid2d.position + Vector2.left * moveSpeed * Time.fixedDeltaTime;
+        rigid2d.MovePosition(nextPosition);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isOnDash || hasHitPlayer)
+        {
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player)
             {
-                Color color = spriteRenderers[i].color;
-                color.a = Mathf.Lerp(spriteColors[i].a, deathColorAlpha, time);
-                spriteRenderers[i].color = color;
+                hasHitPlayer = true;
+                player.TakeKnockback(knockbackDistanceafterdash);
             }
 
-            yield return null;
+            isOnDash = false;
+            animator.SetBool(IsDashHash, isOnDash);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!IsAlive() || isOnDash || isInDashCoolTime)
+        {
+            return;
         }
 
-        for (int i = 0; i < spriteRenderers.Length; i++)
+        if (collision.CompareTag("Player"))
         {
-            Color color = spriteRenderers[i].color;
-            color.a = deathColorAlpha;
-            spriteRenderers[i].color = color;
+            StartCoroutine(DashCoroutine());
         }
+    }
+
+    private IEnumerator DashCoroutine()
+    {
+        isOnDash = true;
+        hasHitPlayer = false;
+        animator.SetBool(IsDashHash, isOnDash);
+
+        yield return new WaitForSeconds(dashBeforePrepareTime);
+
+        float currentTime = 0.0f;
+        while (currentTime < dashDuration && isOnDash)
+        {
+            currentTime += Time.fixedDeltaTime;
+
+            Vector2 targetPosition = rigid2d.position + Vector2.left * dashSpeed * Time.fixedDeltaTime;
+            rigid2d.MovePosition(targetPosition);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        isOnDash = false;
+        animator.SetBool(IsDashHash, isOnDash);
+
+        isInDashCoolTime = true;
+
+        yield return new WaitForSeconds(dashCoolTime);
+
+        isInDashCoolTime = false;
     }
 }

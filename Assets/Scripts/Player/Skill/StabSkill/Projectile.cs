@@ -6,9 +6,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     /// <summary>
-    /// 적 검병
+    /// 적
     /// </summary>
-    SwordSoldier swordSoldier;
+    Enemy enemy;
 
     /// <summary>
     /// 발사체 이동 속도
@@ -52,16 +52,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        swordSoldier = collision.GetComponent<SwordSoldier>();
+        enemy = collision.GetComponent<Enemy>();
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            swordSoldier.health -= attackPower;
-
-            if (!swordSoldier.IsAlive())
-            {
-                swordSoldier.Die();
-            }
+            enemy.TakeDamage(attackPower);
 
             Destroy(gameObject);
 

@@ -10,9 +10,9 @@ public class FireFlameEndEffect : MonoBehaviour
     Animator animator;
 
     /// <summary>
-    /// 적 검병
+    /// 적
     /// </summary>
-    SwordSoldier swordSoldier;
+    Enemy enemy;
 
     /// <summary>
     /// 불꽃 손 종료 애니메이션 길이
@@ -38,16 +38,11 @@ public class FireFlameEndEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        swordSoldier = collision.GetComponent<SwordSoldier>();
+        enemy = collision.GetComponent<Enemy>();
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            swordSoldier.health -= attackPower;
-
-            if (!swordSoldier.IsAlive())
-            {
-                swordSoldier.Die();
-            }
+            enemy.TakeDamage(attackPower);
         }
     }
 }

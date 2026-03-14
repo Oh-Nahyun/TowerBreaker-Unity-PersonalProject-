@@ -10,9 +10,9 @@ public class Weapon : MonoBehaviour
     public Player player;
 
     /// <summary>
-    /// 적 검병
+    /// 적
     /// </summary>
-    SwordSoldier swordSoldier;
+    Enemy enemy;
 
     /// <summary>
     /// 무기 공격력
@@ -26,15 +26,11 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        swordSoldier = collision.GetComponent<SwordSoldier>();
+        enemy = collision.GetComponent<Enemy>();
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            swordSoldier.health -= attackPower;
-            if (!swordSoldier.IsAlive())
-            {
-                swordSoldier.Die();
-            }
+            enemy.TakeDamage(attackPower);
         }
     }
 }
