@@ -437,11 +437,7 @@ public class Player : MonoBehaviour
     private IEnumerator KnockbackCoroutine(Vector2 knockbackDirection, float knockbackDistance, float knockbackDuration)
     {
         isOnKnockback = true;
-
-        rigid2dType = rigid2d.bodyType;
-        rigid2d.bodyType = RigidbodyType2D.Kinematic;
-        rigid2d.velocity = Vector2.zero;
-        rigid2d.angularVelocity = 0.0f;
+        ChangeRigidbodyTypeToKinematic();
 
         Vector2 startPosition = rigid2d.position;
         Vector2 targetPosition = startPosition + knockbackDirection * knockbackDistance;
@@ -459,11 +455,24 @@ public class Player : MonoBehaviour
         }
 
         rigid2d.MovePosition(targetPosition);
+        ChangeRigidbodyTypeToOriginal();
+
+        isOnKnockback = false;
+    }
+
+    public void ChangeRigidbodyTypeToKinematic()
+    {
+        rigid2dType = rigid2d.bodyType;
+        rigid2d.bodyType = RigidbodyType2D.Kinematic;
+        rigid2d.velocity = Vector2.zero;
+        rigid2d.angularVelocity = 0.0f;
+    }
+
+    public void ChangeRigidbodyTypeToOriginal()
+    {
         rigid2d.bodyType = rigid2dType;
         rigid2d.velocity = Vector2.zero;
         rigid2d.angularVelocity = 0.0f;
-
-        isOnKnockback = false;
     }
 
     public void PlayDefenseEffect()

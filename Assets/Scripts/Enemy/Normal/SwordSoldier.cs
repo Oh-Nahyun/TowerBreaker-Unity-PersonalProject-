@@ -11,14 +11,14 @@ public class SwordSoldier : Enemy
     public float moveSpeed = 1.0f;
 
     /// <summary>
-    /// 검병 돌진 속도
+    /// 검병 돌진 중 이동 속도
     /// </summary>
     public float dashSpeed = 2.0f;
 
     /// <summary>
     /// 검병 돌진 후 넉백 거리
     /// </summary>
-    public float knockbackDistanceafterdash = 0.1f;
+    public float knockbackDistanceAfterDash = 0.1f;
 
     /// <summary>
     /// 검병 돌진 시간
@@ -84,7 +84,7 @@ public class SwordSoldier : Enemy
             if (player)
             {
                 hasHitPlayer = true;
-                player.TakeKnockback(knockbackDistanceafterdash);
+                player.TakeKnockback(knockbackDistanceAfterDash);
             }
 
             isOnDash = false;

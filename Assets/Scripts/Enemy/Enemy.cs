@@ -61,10 +61,10 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
         {
-            playerTransform = player.transform;
+            playerTransform = playerObject.transform;
         }
 
         animator.SetBool(IsDeathHash, IsAlive());

@@ -1082,7 +1082,7 @@ MonoBehaviour:
   deathColorAlpha: 0
   moveSpeed: 0.7
   dashSpeed: 1
-  knockbackDistanceafterdash: 0.5
+  knockbackDistanceAfterDash: 0.5
   dashDuration: 1
   dashBeforePrepareTime: 0.25
   dashCoolTime: 3
