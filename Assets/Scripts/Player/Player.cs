@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     /// 플레이어 이동 속도
     /// </summary>
     public float moveSpeed = 0.1f;
+    
+    /// <summary>
+    /// 플레이어 방어 효과 프리팹
+    /// </summary>
+    public GameObject defenseEffectPrefab;
 
     /// <summary>
     /// 스킬 바람 프리팹
@@ -47,6 +52,11 @@ public class Player : MonoBehaviour
     /// 스킬 발사체 프리팹
     /// </summary>
     public GameObject projectilePrefab;
+
+    /// <summary>
+    /// 방어 효과 시작 위치
+    /// </summary>
+    public GameObject defenseEffectSpawnPoint;
 
     /// <summary>
     /// 강공격 스킬 시작 위치
@@ -241,6 +251,11 @@ public class Player : MonoBehaviour
     {
         Vector2 newPosition = rigid2d.position + Time.fixedDeltaTime * moveSpeed * inputDir;
         rigid2d.MovePosition(newPosition);
+    }
+
+    public void PlayDefenseEffect()
+    {
+        Instantiate(defenseEffectPrefab, defenseEffectSpawnPoint.transform.position, Quaternion.identity, defenseEffectSpawnPoint.transform);
     }
 
     public void FireWindGround()

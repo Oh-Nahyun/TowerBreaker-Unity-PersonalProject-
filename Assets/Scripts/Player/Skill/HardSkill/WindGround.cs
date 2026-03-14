@@ -43,7 +43,6 @@ public class WindGround : MonoBehaviour
 
     private void Start()
     {
-        //Destroy(gameObject, animLength);
         Destroy(gameObject, lifeTime);
     }
 

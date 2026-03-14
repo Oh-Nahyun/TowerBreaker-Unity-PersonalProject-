@@ -15,11 +15,6 @@ public class FireFlame : MonoBehaviour
     public GameObject endEffectPrefab;
 
     /// <summary>
-    /// 불꽃 손 수명
-    /// </summary>
-    public float lifeTime = 10.0f;
-
-    /// <summary>
     /// 불꽃 손 범위
     /// </summary>
     [Range(1, 3)]
