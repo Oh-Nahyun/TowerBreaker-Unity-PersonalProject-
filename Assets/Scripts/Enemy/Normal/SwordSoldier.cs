@@ -78,7 +78,7 @@ public class SwordSoldier : MonoBehaviour
     {
         if (IsAlive())
         {
-            transform.position = new Vector3(transform.position.x - Time.deltaTime * moveSpeed, 0.0f, 0.0f);
+            transform.position = new Vector3(transform.position.x - Time.deltaTime * moveSpeed, transform.position.y, 0.0f);
         }
     }
 
