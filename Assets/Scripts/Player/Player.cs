@@ -29,6 +29,11 @@ public class Player : MonoBehaviour
     Collider2D collider2d;
 
     /// <summary>
+    /// 적 검병 배열
+    /// </summary>
+    SwordSoldier[] swordSoldiers;
+
+    /// <summary>
     /// 플레이어 이동 속도
     /// </summary>
     public float moveSpeed = 5.0f;
@@ -42,6 +47,26 @@ public class Player : MonoBehaviour
     /// 플레이어 이동 상태
     /// </summary>
     private bool isOnMove = false;
+
+    /// <summary>
+    /// 플레이어 방어 후 이동 속도
+    /// </summary>
+    public float defenseSpeed = 5.0f;
+
+    /// <summary>
+    /// 플레이어 방어 시간
+    /// </summary>
+    public float defenseDuration = 0.1f;
+
+    /// <summary>
+    /// 방어 시 적이 움직일 거리
+    /// </summary>
+    public Vector3 movePosition = new Vector3(1.0f, 0.0f, 0.0f);
+
+    /// <summary>
+    /// 플레이어 방어 상태
+    /// </summary>
+    private bool isOnDefense = false;
 
     /// <summary>
     /// 플레이어 체력
@@ -235,10 +260,15 @@ public class Player : MonoBehaviour
 
     void SetDefenseInput(bool IsDefense)
     {
+        if (!IsAlive() || isOnAttack || isOnDefense)
+        {
+            return;
+        }
+
         if (IsDefense)
         {
             Debug.Log("방어 시작");
-            animator.SetTrigger(DefenseHash);
+            StartCoroutine(DefenseCoroutine());
         }
         else
         {
@@ -323,23 +353,51 @@ public class Player : MonoBehaviour
         collider2d.enabled = false;
     }
 
-    private IEnumerator MoveCoroutine()
+    private IEnumerator RunCoroutine(float runSpeed, float runDuration, Vector2 runDirection)
     {
-        isOnMove = true;
-        animator.SetTrigger(MoveHash);
-
         float currentTime = 0.0f;
-        while (currentTime < moveDuration)
+        while (currentTime < runDuration)
         {
             currentTime += Time.fixedDeltaTime;
 
-            Vector2 targetPosition = rigid2d.position + Vector2.right * moveSpeed * Time.fixedDeltaTime;
+            Vector2 targetPosition = rigid2d.position + runDirection * runSpeed * Time.fixedDeltaTime;
             rigid2d.MovePosition(targetPosition);
 
             yield return new WaitForFixedUpdate();
         }
+    }
 
+    private IEnumerator MoveCoroutine()
+    {
+        isOnMove = true;
+        animator.SetTrigger(MoveHash);
+        yield return StartCoroutine(RunCoroutine(moveSpeed, moveDuration, Vector2.right));
         isOnMove = false;
+    }
+
+    private IEnumerator DefenseCoroutine()
+    {
+        isOnDefense = true;
+        animator.SetTrigger(DefenseHash);
+        yield return new WaitForSeconds(defenseDuration);
+        isOnDefense = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isOnDefense || !collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        swordSoldiers = FindObjectsByType<SwordSoldier>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < swordSoldiers.Length; i++)
+        {
+            swordSoldiers[i].transform.position += movePosition;
+        }
+
+        StartCoroutine(RunCoroutine(defenseSpeed, defenseDuration, Vector2.left));
     }
 
     private IEnumerator NormalAttackCoroutine()

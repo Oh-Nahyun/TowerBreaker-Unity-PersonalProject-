@@ -1110,6 +1110,7 @@ GameObject:
   - component: {fileID: 1307711342099752831}
   - component: {fileID: 5541984194741164093}
   - component: {fileID: 5728045352356077844}
+  - component: {fileID: 629859068441805241}
   - component: {fileID: 3188755577283358148}
   - component: {fileID: 4537896251595780390}
   m_Layer: 3
@@ -1205,6 +1206,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.375}
   m_Size: {x: 0.5, y: 0.75}
   m_Direction: 0
+--- !u!58 &629859068441805241
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957152950864119551}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.375}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!114 &3188755577283358148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4205,6 +4241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   moveDuration: 0.5
+  defenseSpeed: 7
+  defenseDuration: 0.5
   health: 100
   isOnAttack: 0
   normalAttackIntercal: 0.5
@@ -5931,7 +5969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5074182217006700066
