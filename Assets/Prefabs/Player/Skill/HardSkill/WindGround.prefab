@@ -216,5 +216,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  lifeTime: 10
+  lifeTime: 0.5
   attackPower: 100

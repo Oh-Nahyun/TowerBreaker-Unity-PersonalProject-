@@ -89,8 +89,6 @@ public class SwordSoldier : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("검병 사망");
-
         animator.SetBool(IsDeathHash, !IsAlive());
         animator.SetTrigger(DeathHash);
 

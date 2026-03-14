@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid2d;
 
     /// <summary>
+    /// 플레이어 콜라이더
+    /// </summary>
+    Collider2D collider2d;
+
+    /// <summary>
     /// 플레이어 이동 방향
     /// </summary>
     Vector2 inputDir = Vector2.zero;
@@ -32,7 +37,33 @@ public class Player : MonoBehaviour
     /// 플레이어 이동 속도
     /// </summary>
     public float moveSpeed = 0.1f;
-    
+
+    /// <summary>
+    /// 플레이어 체력
+    /// </summary>
+    public int health = 100;
+    public int Health
+    {
+        get => health;
+        private set
+        {
+            if (health != value)
+            {
+                health = Mathf.Min(value, 100);
+            }
+
+            if (health <= 0)
+            {
+                health = 0;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 플레이어 공격 상태
+    /// </summary>
+    public bool isOnAttack = false;
+
     /// <summary>
     /// 플레이어 방어 효과 프리팹
     /// </summary>
@@ -74,11 +105,6 @@ public class Player : MonoBehaviour
     public GameObject stabSkillSpawnPoint;
 
     /// <summary>
-    /// 플레이어 공격 상태
-    /// </summary>
-    public bool isOnAttack = false;
-
-    /// <summary>
     /// 플레이어 애니메이터용 해시값
     /// </summary>
     readonly int IsMoveHash = Animator.StringToHash("IsMove");
@@ -87,16 +113,24 @@ public class Player : MonoBehaviour
     readonly int HardSkillHash = Animator.StringToHash("HardSkill");
     readonly int RangeSkillHash = Animator.StringToHash("RangeSkill");
     readonly int StabSkillHash = Animator.StringToHash("StabSkill");
+    readonly int DeathHash = Animator.StringToHash("Death");
+    readonly int IsDeathHash = Animator.StringToHash("IsDeath");
 
     private void Awake()
     {
         inputActions = new PlayerInputActions();
         animator = GetComponentInChildren<Animator>();
         rigid2d = GetComponent<Rigidbody2D>();
+        collider2d = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
     {
+        if (!IsAlive() || isOnAttack)
+        {
+            return;
+        }
+
         Move();
     }
 
@@ -251,6 +285,26 @@ public class Player : MonoBehaviour
     {
         Vector2 newPosition = rigid2d.position + Time.fixedDeltaTime * moveSpeed * inputDir;
         rigid2d.MovePosition(newPosition);
+    }
+
+    private bool IsAlive()
+    {
+        return health > 0;
+    }
+
+    public void Die()
+    {
+        Debug.Log("플레이어 사망");
+
+        animator.SetBool(IsDeathHash, !IsAlive());
+        animator.SetTrigger(DeathHash);
+
+        DisableCollider();
+    }
+
+    private void DisableCollider()
+    {
+        collider2d.enabled = false;
     }
 
     public void PlayDefenseEffect()

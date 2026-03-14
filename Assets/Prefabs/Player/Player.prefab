@@ -4204,6 +4204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  health: 100
+  isOnAttack: 0
   defenseEffectPrefab: {fileID: 624048965488710893, guid: 2406bf67e29e9497282cda7a69b261fc, type: 3}
   windGroundPrefab: {fileID: 5172720743031656011, guid: 3f068fac8d695425e9095baad70f3bda, type: 3}
   flameHandPrefab: {fileID: 24052915007788363, guid: 1e6aa270a1daa49be839acb26b46ddec, type: 3}
@@ -4212,7 +4214,6 @@ MonoBehaviour:
   hardSkillSpawnPoint: {fileID: 6193780908733437753}
   rangeSkillSpawnPoint: {fileID: 4218539037101044588}
   stabSkillSpawnPoint: {fileID: 8930689754408541906}
-  isOnAttack: 0
 --- !u!1 &2034921415427146200
 GameObject:
   m_ObjectHideFlags: 0
