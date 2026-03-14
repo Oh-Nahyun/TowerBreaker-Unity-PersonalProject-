@@ -44,9 +44,14 @@ public class Player : MonoBehaviour
     public GameObject flameHandPrefab;
 
     /// <summary>
-    /// 스킬 시작 위치
+    /// 찌르기 스킬 시작 위치
     /// </summary>
-    public GameObject skillSpawnPoint;
+    public GameObject stabSkillSpawnPoint;
+
+    /// <summary>
+    /// 범위 스킬 시작 위치
+    /// </summary>
+    public GameObject rangeSkillSpawnPoint;
 
     /// <summary>
     /// 플레이어 공격 상태
@@ -230,11 +235,11 @@ public class Player : MonoBehaviour
 
     public void FireFlameHand()
     {
-        Instantiate(flameHandPrefab, skillSpawnPoint.transform.position, Quaternion.identity);
+        Instantiate(flameHandPrefab, rangeSkillSpawnPoint.transform.position, Quaternion.identity);
     }
 
     public void FireProjectile()
     {
-        Instantiate(projectilePrefab, skillSpawnPoint.transform.position, Quaternion.identity);
+        Instantiate(projectilePrefab, stabSkillSpawnPoint.transform.position, Quaternion.identity);
     }
 }

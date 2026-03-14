@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 7
   m_Sprite: {fileID: 5569329726105825983, guid: 5b8ac3b48d3ce374d9e8eb65766c0e84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -215,7 +215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16d8e9c78cbf41e18bcad234645648c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startEffectPrefab: {fileID: 8388605410255136456, guid: e840be24e91af42e1a6691944477aa61, type: 3}
-  lifeTime: 10
-  range: 1
   attackPower: 100

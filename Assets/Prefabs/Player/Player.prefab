@@ -1133,6 +1133,7 @@ RectTransform:
   m_Children:
   - {fileID: 7239214559646645920}
   - {fileID: 8826930458707283331}
+  - {fileID: 8797792632463116709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4203,7 +4204,8 @@ MonoBehaviour:
   moveSpeed: 1
   projectilePrefab: {fileID: 4891780971573526544, guid: f5af0a479b17947af95bf74bd3dc6cde, type: 3}
   flameHandPrefab: {fileID: 24052915007788363, guid: 1e6aa270a1daa49be839acb26b46ddec, type: 3}
-  skillSpawnPoint: {fileID: 8930689754408541906}
+  stabSkillSpawnPoint: {fileID: 8930689754408541906}
+  rangeSkillSpawnPoint: {fileID: 4218539037101044588}
   isOnAttack: 0
 --- !u!1 &2034921415427146200
 GameObject:
@@ -5322,6 +5324,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c562f92f3b8b435d98ac3b65547b755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4218539037101044588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8797792632463116709}
+  m_Layer: 3
+  m_Name: RangeSkillSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8797792632463116709
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218539037101044588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1307711342099752831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.3, y: 0.95}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4322191269217300357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,7 +7826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8826930458707283331}
   m_Layer: 8
-  m_Name: SkillSpawnPoint
+  m_Name: StabSkillSpawnPoint
   m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7811,7 +7848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.152, y: -0.006}
+  m_AnchoredPosition: {x: 1.15, y: -0.006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &8902076609674016222
