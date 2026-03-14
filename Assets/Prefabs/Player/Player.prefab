@@ -4203,9 +4203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042a9d5ae5b574f2e8240e920081744e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 10
+  moveDuration: 0.5
   health: 100
   isOnAttack: 0
+  normalAttackIntercal: 0.5
   defenseEffectPrefab: {fileID: 624048965488710893, guid: 2406bf67e29e9497282cda7a69b261fc, type: 3}
   windGroundPrefab: {fileID: 5172720743031656011, guid: 3f068fac8d695425e9095baad70f3bda, type: 3}
   flameHandPrefab: {fileID: 24052915007788363, guid: 1e6aa270a1daa49be839acb26b46ddec, type: 3}

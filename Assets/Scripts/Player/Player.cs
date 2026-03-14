@@ -29,14 +29,19 @@ public class Player : MonoBehaviour
     Collider2D collider2d;
 
     /// <summary>
-    /// 플레이어 이동 방향
-    /// </summary>
-    Vector2 inputDir = Vector2.zero;
-
-    /// <summary>
     /// 플레이어 이동 속도
     /// </summary>
-    public float moveSpeed = 0.1f;
+    public float moveSpeed = 5.0f;
+
+    /// <summary>
+    /// 플레이어 이동 시간
+    /// </summary>
+    public float moveDuration = 0.1f;
+
+    /// <summary>
+    /// 플레이어 이동 상태
+    /// </summary>
+    private bool isOnMove = false;
 
     /// <summary>
     /// 플레이어 체력
@@ -63,6 +68,16 @@ public class Player : MonoBehaviour
     /// 플레이어 공격 상태
     /// </summary>
     public bool isOnAttack = false;
+
+    /// <summary>
+    /// 플레이어 일반 공격 사용 상태
+    /// </summary>
+    private bool isNormalAttacking = false;
+
+    /// <summary>
+    /// 플레이어 일반 공격 간격
+    /// </summary>
+    public float normalAttackIntercal = 0.5f;
 
     /// <summary>
     /// 플레이어 방어 효과 프리팹
@@ -107,7 +122,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 플레이어 애니메이터용 해시값
     /// </summary>
-    readonly int IsMoveHash = Animator.StringToHash("IsMove");
+    readonly int MoveHash = Animator.StringToHash("Move");
     readonly int DefenseHash = Animator.StringToHash("Defense");
     readonly int NormalAttackHash = Animator.StringToHash("NormalAttack");
     readonly int HardSkillHash = Animator.StringToHash("HardSkill");
@@ -122,16 +137,6 @@ public class Player : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rigid2d = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        if (!IsAlive() || isOnAttack)
-        {
-            return;
-        }
-
-        Move();
     }
 
     private void OnEnable()
@@ -182,7 +187,6 @@ public class Player : MonoBehaviour
 
     private void OnMoveInput(InputAction.CallbackContext context)
     {
-        inputDir = context.ReadValue<Vector2>();
         SetMoveInput(!context.canceled);
     }
 
@@ -213,7 +217,20 @@ public class Player : MonoBehaviour
 
     void SetMoveInput(bool IsMove)
     {
-        animator.SetBool(IsMoveHash, IsMove);
+        if (!IsAlive() || isOnAttack || isOnMove)
+        {
+            return;
+        }
+
+        if (IsMove)
+        {
+            Debug.Log("이동 시작");
+            StartCoroutine(MoveCoroutine());
+        }
+        else
+        {
+            Debug.Log("이동 종료");
+        }
     }
 
     void SetDefenseInput(bool IsDefense)
@@ -234,11 +251,16 @@ public class Player : MonoBehaviour
         if (IsNormalAttack)
         {
             Debug.Log("일반 공격 시작");
-            animator.SetTrigger(NormalAttackHash);
+            if (!isNormalAttacking)
+            {
+                isNormalAttacking = true;
+                StartCoroutine(NormalAttackCoroutine());
+            }
         }
         else
         {
             Debug.Log("일반 공격 종료");
+            isNormalAttacking = false;
         }
     }
 
@@ -281,12 +303,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Move()
-    {
-        Vector2 newPosition = rigid2d.position + Time.fixedDeltaTime * moveSpeed * inputDir;
-        rigid2d.MovePosition(newPosition);
-    }
-
     private bool IsAlive()
     {
         return health > 0;
@@ -305,6 +321,34 @@ public class Player : MonoBehaviour
     private void DisableCollider()
     {
         collider2d.enabled = false;
+    }
+
+    private IEnumerator MoveCoroutine()
+    {
+        isOnMove = true;
+        animator.SetTrigger(MoveHash);
+
+        float currentTime = 0.0f;
+        while (currentTime < moveDuration)
+        {
+            currentTime += Time.fixedDeltaTime;
+
+            Vector2 targetPosition = rigid2d.position + Vector2.right * moveSpeed * Time.fixedDeltaTime;
+            rigid2d.MovePosition(targetPosition);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        isOnMove = false;
+    }
+
+    private IEnumerator NormalAttackCoroutine()
+    {
+        while (isNormalAttacking)
+        {
+            animator.SetTrigger(NormalAttackHash);
+            yield return new WaitForSeconds(normalAttackIntercal);
+        }
     }
 
     public void PlayDefenseEffect()

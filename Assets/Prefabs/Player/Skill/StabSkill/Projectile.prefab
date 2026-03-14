@@ -112,7 +112,7 @@ MonoBehaviour:
   moveSpeed: 3
   startEffectPrefab: {fileID: 9048171323452961283, guid: 260f9de2744c9428da057b5586e8bfd9, type: 3}
   endEffectPrefab: {fileID: 1500953225828951875, guid: b446d054a8121452ca6479fcbd7b79dc, type: 3}
-  lifeTime: 10
+  lifeTime: 2
   attackPower: 100
 --- !u!1 &6319154593155029670
 GameObject:
