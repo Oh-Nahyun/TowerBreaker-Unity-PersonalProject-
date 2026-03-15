@@ -1618,14 +1618,14 @@ MonoBehaviour:
   explosionPrefab: {fileID: 5172720743031656011, guid: 2b09fcc2bcc6248b7a6e768e4188a092, type: 3}
   lightningPoint: {fileID: 283572949740120091}
   explosionPoint: {fileID: 5157683340623087346}
-  moveSpeed: 1
-  patternCoolTime: 1
-  lightningToExplosionTime: 0.5
-  lightningPrepareTime: 0.3
-  explosionPrepareTime: 0.3
-  lightningRandomRange: 1
+  moveSpeed: 0.25
+  patternCoolTime: 2
+  lightningToExplosionTime: 0.7
+  lightningPrepareTime: 0.5
+  explosionPrepareTime: 0.5
+  lightningRandomRange: 2
   lightningCount: 3
-  lightningInterval: 0.2
+  lightningInterval: 0.5
 --- !u!1 &3897179262474473887
 GameObject:
   m_ObjectHideFlags: 0
