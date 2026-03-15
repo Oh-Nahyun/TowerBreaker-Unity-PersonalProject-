@@ -136,6 +136,7 @@ public class WaterSoldier : Enemy
     {
         if (collision.CompareTag("Player"))
         {
+            player = collision.gameObject;
             isPlayerInTrigger = true;
         }
     }

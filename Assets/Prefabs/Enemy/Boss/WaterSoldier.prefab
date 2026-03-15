@@ -1705,7 +1705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3301756827971547653
@@ -4031,11 +4031,11 @@ MonoBehaviour:
   holyRisePrefab: {fileID: 5172720743031656011, guid: 88365cf7759d8436ca3b73e95d972702, type: 3}
   waterWavePoint: {fileID: 4707339577167645232}
   holyRisePoint: {fileID: 9159927543949060808}
-  moveSpeed: 1
-  patternCoolTime: 1
-  waterWaveToHolyRiseTime: 0.4
-  waterWavePrepareTime: 0.3
-  holyRisePrepareTime: 0.3
+  moveSpeed: 0.3
+  patternCoolTime: 2
+  waterWaveToHolyRiseTime: 0.8
+  waterWavePrepareTime: 0.6
+  holyRisePrepareTime: 0.6
   holyRiseRandomRange: 1
 --- !u!1 &7319712617231948472
 GameObject:
