@@ -76,23 +76,14 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 플레이어 체력
     /// </summary>
-    public int health = 100;
-    public int Health
-    {
-        get => health;
-        private set
-        {
-            if (health != value)
-            {
-                health = Mathf.Min(value, 100);
-            }
+    protected int health = 100;
+    public int Health => health;
 
-            if (health <= 0)
-            {
-                health = 0;
-            }
-        }
-    }
+    /// <summary>
+    /// 플레이어 하트 갯수
+    /// </summary>
+    [Range(1, 10)]
+    public int heartCount = 3;
 
     /// <summary>
     /// 플레이어 공격 상태
@@ -337,6 +328,22 @@ public class Player : MonoBehaviour
     private void DisableCollider()
     {
         collider2d.enabled = false;
+    }
+
+    public virtual void TakeDamage(int damage)
+    {
+        if (!IsAlive())
+        {
+            return;
+        }
+
+        health -= damage;
+        health = Mathf.Clamp(health, 0, 100);
+
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     public void TakeKnockback(float knockbackDistance)

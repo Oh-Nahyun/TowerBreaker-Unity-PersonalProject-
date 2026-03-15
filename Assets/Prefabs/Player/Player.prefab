@@ -1257,7 +1257,7 @@ MonoBehaviour:
   defenseSpeed: 7
   defenseDuration: 0.5
   movePosition: {x: 1, y: 0, z: 0}
-  health: 100
+  heartCount: 5
   isOnAttack: 0
   normalAttackIntercal: 0.5
   defenseEffectPrefab: {fileID: 624048965488710893, guid: 2406bf67e29e9497282cda7a69b261fc, type: 3}
