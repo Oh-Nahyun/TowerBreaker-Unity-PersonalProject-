@@ -9,6 +9,6 @@ public class OutGamePanel : MonoBehaviour
     private void Awake()
     {
         Button play = GetComponentInChildren<Button>();
-        play.onClick.AddListener(() => SceneManager.LoadScene(0));
+        play.onClick.AddListener(() => SceneManager.LoadScene(1));
     }
 }

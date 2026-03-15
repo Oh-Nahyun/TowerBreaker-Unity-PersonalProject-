@@ -16,6 +16,13 @@ public class GameManager : Singleton<GameManager>
     public static GameManager Instance;
 
     /// <summary>
+    /// 게임 배경 음악
+    /// </summary>
+    [SerializeField]
+    AudioClip bgmClip;
+    AudioSource bgmSource;
+
+    /// <summary>
     /// 인게임 패널
     /// </summary>
     public InGamePanel InGamePanel;
@@ -98,6 +105,22 @@ public class GameManager : Singleton<GameManager>
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        bgmSource = GetComponent<AudioSource>();
+        if (bgmSource == null)
+        {
+            bgmSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        bgmSource.clip = bgmClip;
+        bgmSource.loop = true;
+        bgmSource.playOnAwake = false;
+        bgmSource.volume = 1.0f;
+
+        if (!bgmSource.isPlaying)
+        {
+            bgmSource.Play();
+        }
     }
 
     protected override void OnInitialize()
