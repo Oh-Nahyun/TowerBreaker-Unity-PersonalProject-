@@ -42,7 +42,7 @@ public class ArcherSoldier : Enemy
     /// <summary>
     /// 활병 애니메이터용 해시값
     /// </summary>
-    protected readonly int IsFireArrowHash = Animator.StringToHash("IsFireArrow");
+    protected readonly int FireArrowHash = Animator.StringToHash("FireArrow");
 
     protected override void Start()
     {
@@ -79,14 +79,14 @@ public class ArcherSoldier : Enemy
             isOnMove = true;
             isOnFireArrow = false;
 
-            animator.SetBool(IsFireArrowHash, isOnFireArrow);
+            animator.SetBool(FireArrowHash, isOnFireArrow);
 
             yield return new WaitForSeconds(moveDuration);
 
             isOnMove = false;
             isOnFireArrow = true;
 
-            animator.SetBool(IsFireArrowHash, isOnFireArrow);
+            animator.SetBool(FireArrowHash, isOnFireArrow);
 
             yield return new WaitForSeconds(fireArrowDuration);
         }
