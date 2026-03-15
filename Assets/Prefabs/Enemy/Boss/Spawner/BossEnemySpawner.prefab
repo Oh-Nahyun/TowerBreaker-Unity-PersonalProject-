@@ -120,6 +120,6 @@ MonoBehaviour:
   lightSoldierPrefab: {fileID: 3869153255920872131, guid: 30d2ee92a9fd74e1783cf1ecd0af45c4, type: 3}
   waterSoldierTransform: {fileID: 426762928972664947}
   lightSoldierTransform: {fileID: 7814790674858674243}
-  minSpawnInterval: 7
-  maxSpawnInterval: 10
+  minSpawnInterval: 3
+  maxSpawnInterval: 5
   enemySpawnCount: 3

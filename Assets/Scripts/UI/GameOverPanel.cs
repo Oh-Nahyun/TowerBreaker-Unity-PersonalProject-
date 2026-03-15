@@ -31,7 +31,7 @@ public class GameOverPanel : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
 
         Button quit = GetComponentInChildren<Button>();
-        quit.onClick.AddListener(() => SceneManager.LoadScene(0));
+        quit.onClick.AddListener(() => SceneManager.LoadScene(1));
     }
 
     private void Start()

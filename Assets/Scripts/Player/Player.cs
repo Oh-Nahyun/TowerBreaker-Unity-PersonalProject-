@@ -156,6 +156,16 @@ public class Player : MonoBehaviour
     public GameObject stabSkillPoint;
 
     /// <summary>
+    /// 장비 추가 공격력
+    /// </summary>
+    public int equipmentAttackBonus;
+
+    /// <summary>
+    /// 장비 추가 방어력
+    /// </summary>
+    public int equipmentDefenseBonus;
+
+    /// <summary>
     /// 플레이어 애니메이터용 해시값
     /// </summary>
     readonly int MoveHash = Animator.StringToHash("Move");
@@ -366,6 +376,11 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
+            if (GameManager.Instance.InGamePanel)
+            {
+                GameManager.Instance.InGamePanel.SetBlockRaycast(false);
+            }
+
             Die();
         }
     }
@@ -495,5 +510,11 @@ public class Player : MonoBehaviour
     public void FireProjectile()
     {
         Instantiate(projectilePrefab, stabSkillPoint.transform.position, Quaternion.identity);
+    }
+
+    public void SetEquipmentBonus(int attackBonus, int defenseBonus)
+    {
+        equipmentAttackBonus = attackBonus;
+        equipmentDefenseBonus = defenseBonus;
     }
 }

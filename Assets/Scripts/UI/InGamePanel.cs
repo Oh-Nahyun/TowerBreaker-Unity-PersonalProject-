@@ -11,6 +11,11 @@ using UnityEngine.UI;
 public class InGamePanel : MonoBehaviour
 {
     /// <summary>
+    /// UI 캔버스 그룹
+    /// </summary>
+    CanvasGroup canvasGroup;
+
+    /// <summary>
     /// 게임 스테이지 텍스트
     /// </summary>
     TMP_Text gameStageText;
@@ -22,6 +27,12 @@ public class InGamePanel : MonoBehaviour
 
     private void Awake()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
+
         gameStageText = transform.Find("GameStageText").GetComponent<TMP_Text>();
         playerHealthText = transform.Find("PlayerHealthText").GetComponent<TMP_Text>();
 
@@ -66,5 +77,10 @@ public class InGamePanel : MonoBehaviour
     public void UpdatePlayerHealthUI(int currentHealth)
     {
         playerHealthText.text = $"Player HP : {currentHealth} / 100";
+    }
+
+    public void SetBlockRaycast(bool isBlock)
+    {
+        canvasGroup.blocksRaycasts = isBlock;
     }
 }

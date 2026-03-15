@@ -1829,7 +1829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6293733833261458664}
   m_Layer: 0
-  m_Name: UI
+  m_Name: InGameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,6 +2222,7 @@ GameObject:
   - component: {fileID: 2896066712611555012}
   - component: {fileID: 4622477180771995078}
   - component: {fileID: 7599501252054240339}
+  - component: {fileID: 6796946472613307243}
   m_Layer: 0
   m_Name: InGamePanel
   m_TagString: Untagged
@@ -2306,6 +2307,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70599f5b77f71440b8ce08e2fc2c30fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &6796946472613307243
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6408334340616726192}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7827256491584955097
 GameObject:
   m_ObjectHideFlags: 0
