@@ -86,6 +86,11 @@ public class Player : MonoBehaviour
     public int heartCount = 3;
 
     /// <summary>
+    /// 플레이어 사망 상태
+    /// </summary>
+    private bool isDead = false;
+
+    /// <summary>
     /// 플레이어 공격 상태
     /// </summary>
     public bool isOnAttack = false;
@@ -161,6 +166,11 @@ public class Player : MonoBehaviour
     readonly int StabSkillHash = Animator.StringToHash("StabSkill");
     readonly int DeathHash = Animator.StringToHash("Death");
     readonly int IsDeathHash = Animator.StringToHash("IsDeath");
+
+    /// <summary>
+    /// 함수 저장용 변수
+    /// </summary>
+    public Action<int> onDie;
 
     private void Awake()
     {
@@ -246,7 +256,7 @@ public class Player : MonoBehaviour
         SetStabSkillInput(!context.canceled);
     }
 
-    void SetMoveInput(bool IsMove)
+    public void SetMoveInput(bool IsMove)
     {
         if (!IsAlive() || isOnAttack || isOnMove || isOnKnockback)
         {
@@ -259,7 +269,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetDefenseInput(bool IsDefense)
+    public void SetDefenseInput(bool IsDefense)
     {
         if (!IsAlive() || isOnAttack || isOnDefense || isOnKnockback)
         {
@@ -272,7 +282,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetNormalAttackInput(bool IsNormalAttack)
+    public void SetNormalAttackInput(bool IsNormalAttack)
     {
         if (IsNormalAttack)
         {
@@ -288,7 +298,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetHardSkillInput(bool IsHardSkill)
+    public void SetHardSkillInput(bool IsHardSkill)
     {
         if (IsHardSkill)
         {
@@ -296,7 +306,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetRangeSkillInput(bool IsRangeSkill)
+    public void SetRangeSkillInput(bool IsRangeSkill)
     {
         if (IsRangeSkill)
         {
@@ -304,7 +314,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetStabSkillInput(bool IsStabSkill)
+    public void SetStabSkillInput(bool IsStabSkill)
     {
         if (IsStabSkill)
         {
@@ -319,6 +329,14 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        if (isDead)
+        {
+            return;
+        }
+
+        isDead = true;
+        onDie?.Invoke(0);
+
         animator.SetBool(IsDeathHash, !IsAlive());
         animator.SetTrigger(DeathHash);
 
@@ -332,7 +350,7 @@ public class Player : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
-        if (!IsAlive())
+        if (!IsAlive() || isDead)
         {
             return;
         }
