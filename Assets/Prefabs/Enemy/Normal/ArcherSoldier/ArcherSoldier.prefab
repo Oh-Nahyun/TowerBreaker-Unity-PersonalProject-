@@ -2982,7 +2982,6 @@ MonoBehaviour:
   arrowPrefab: {fileID: 8033935609381440095, guid: 3fc5e9dd697f8408eaf3310ea4ded5bf, type: 3}
   fireArrowPoint: {fileID: 3594653474534469909}
   moveSpeed: 0.5
-  knockbackDistance: 0.1
   moveDuration: 2
   fireArrowDuration: 0.5
   isOnMove: 0
@@ -3066,7 +3065,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: -20
   m_SortAtRoot: 0
 --- !u!95 &3384818630734165316
 Animator:
