@@ -206,4 +206,14 @@ public class WaterSoldier : Enemy
 
         HolyRise();
     }
+
+    public override void Die()
+    {
+        StopAllCoroutines();
+        isOnPattern = false;
+        isPlayerInTrigger = false;
+        StopMove();
+
+        base.Die();
+    }
 }

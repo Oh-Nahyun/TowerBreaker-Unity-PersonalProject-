@@ -227,4 +227,14 @@ public class LightSoldier : Enemy
 
         Explosion(targetX);
     }
+
+    public override void Die()
+    {
+        StopAllCoroutines();
+        isOnPattern = false;
+        isPlayerInTrigger = false;
+        StopMove();
+
+        base.Die();
+    }
 }

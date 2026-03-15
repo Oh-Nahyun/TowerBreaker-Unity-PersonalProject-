@@ -10,11 +10,6 @@ public class FireFlameEndEffect : MonoBehaviour
     Animator animator;
 
     /// <summary>
-    /// 적
-    /// </summary>
-    Enemy enemy;
-
-    /// <summary>
     /// 불꽃 손 종료 애니메이션 길이
     /// </summary>
     float endAnimLength = 0.0f;
@@ -38,9 +33,9 @@ public class FireFlameEndEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemy = collision.GetComponent<Enemy>();
+        Enemy enemy = collision.GetComponentInParent<Enemy>();
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (enemy != null)
         {
             enemy.TakeDamage(attackPower);
         }

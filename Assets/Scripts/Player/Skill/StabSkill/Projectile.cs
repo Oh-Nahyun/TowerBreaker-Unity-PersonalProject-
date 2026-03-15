@@ -6,11 +6,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     /// <summary>
-    /// 적
-    /// </summary>
-    Enemy enemy;
-
-    /// <summary>
     /// 발사체 이동 속도
     /// </summary>
     public float moveSpeed = 5.0f;
@@ -52,9 +47,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemy = collision.GetComponent<Enemy>();
+        Enemy enemy = collision.GetComponentInParent<Enemy>();
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (enemy != null)
         {
             enemy.TakeDamage(attackPower);
 

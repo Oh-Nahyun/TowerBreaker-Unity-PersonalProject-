@@ -264,12 +264,7 @@ public class Player : MonoBehaviour
 
         if (IsMove)
         {
-            Debug.Log("이동 시작");
             StartCoroutine(MoveCoroutine());
-        }
-        else
-        {
-            Debug.Log("이동 종료");
         }
     }
 
@@ -282,12 +277,7 @@ public class Player : MonoBehaviour
 
         if (IsDefense)
         {
-            Debug.Log("방어 시작");
             StartCoroutine(DefenseCoroutine());
-        }
-        else
-        {
-            Debug.Log("방어 종료");
         }
     }
 
@@ -295,7 +285,6 @@ public class Player : MonoBehaviour
     {
         if (IsNormalAttack)
         {
-            Debug.Log("일반 공격 시작");
             if (!isNormalAttacking)
             {
                 isNormalAttacking = true;
@@ -304,7 +293,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("일반 공격 종료");
             isNormalAttacking = false;
         }
     }
@@ -313,12 +301,7 @@ public class Player : MonoBehaviour
     {
         if (IsHardSkill)
         {
-            Debug.Log("강공격 스킬 시작");
             animator.SetTrigger(HardSkillHash);
-        }
-        else
-        {
-            Debug.Log("강공격 스킬 종료");
         }
     }
 
@@ -326,12 +309,7 @@ public class Player : MonoBehaviour
     {
         if (IsRangeSkill)
         {
-            Debug.Log("범위 스킬 시작");
             animator.SetTrigger(RangeSkillHash);
-        }
-        else
-        {
-            Debug.Log("범위 스킬 종료");
         }
     }
 
@@ -339,12 +317,7 @@ public class Player : MonoBehaviour
     {
         if (IsStabSkill)
         {
-            Debug.Log("찌르기 스킬 시작");
             animator.SetTrigger(StabSkillHash);
-        }
-        else
-        {
-            Debug.Log("찌르기 스킬 종료");
         }
     }
 
@@ -355,8 +328,6 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("플레이어 사망");
-
         animator.SetBool(IsDeathHash, !IsAlive());
         animator.SetTrigger(DeathHash);
 

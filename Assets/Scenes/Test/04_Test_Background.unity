@@ -198,14 +198,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 426762928972664947, guid: 1372e7a151142418baa27aa08a9f72b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 7814790674858674243, guid: 1372e7a151142418baa27aa08a9f72b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.06
-      objectReference: {fileID: 0}
     - target: {fileID: 8109949340235105832, guid: 1372e7a151142418baa27aa08a9f72b3, type: 3}
       propertyPath: m_Name
       value: NormalEnemySpawner
@@ -548,21 +540,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 426762928972664947, guid: 1b3460837cfba491a824352e5c93e649, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7814790674858674243, guid: 1b3460837cfba491a824352e5c93e649, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8109949340235105832, guid: 1b3460837cfba491a824352e5c93e649, type: 3}
       propertyPath: m_Name
       value: BossEnemySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 8260552430462838550, guid: 1b3460837cfba491a824352e5c93e649, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8260552430462838550, guid: 1b3460837cfba491a824352e5c93e649, type: 3}
       propertyPath: m_LocalPosition.y

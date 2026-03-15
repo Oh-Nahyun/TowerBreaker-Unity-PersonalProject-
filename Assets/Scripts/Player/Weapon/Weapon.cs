@@ -10,11 +10,6 @@ public class Weapon : MonoBehaviour
     public Player player;
 
     /// <summary>
-    /// 적
-    /// </summary>
-    Enemy enemy;
-
-    /// <summary>
     /// 무기 공격력
     /// </summary>
     public int attackPower = 100;
@@ -26,9 +21,9 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        enemy = collision.GetComponent<Enemy>();
+        Enemy enemy = collision.GetComponentInParent<Enemy>();
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (enemy != null)
         {
             enemy.TakeDamage(attackPower);
         }

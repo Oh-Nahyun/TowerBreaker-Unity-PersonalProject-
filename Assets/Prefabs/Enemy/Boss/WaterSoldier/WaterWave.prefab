@@ -215,6 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e12595dfdb574f8897fe6d87d35dfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
   lifeTime: 0.3
   knockbackDistanceAfterWaterWave: 0.5
