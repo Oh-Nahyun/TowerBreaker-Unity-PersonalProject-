@@ -142,22 +142,22 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 방어 효과 시작 위치
     /// </summary>
-    public GameObject defenseEffectSpawnPoint;
+    public GameObject defenseEffectPoint;
 
     /// <summary>
     /// 강공격 스킬 시작 위치
     /// </summary>
-    public GameObject hardSkillSpawnPoint;
+    public GameObject hardSkillPoint;
 
     /// <summary>
     /// 범위 스킬 시작 위치
     /// </summary>
-    public GameObject rangeSkillSpawnPoint;
+    public GameObject rangeSkillPoint;
 
     /// <summary>
     /// 찌르기 스킬 시작 위치
     /// </summary>
-    public GameObject stabSkillSpawnPoint;
+    public GameObject stabSkillPoint;
 
     /// <summary>
     /// 플레이어 애니메이터용 해시값
@@ -477,21 +477,21 @@ public class Player : MonoBehaviour
 
     public void PlayDefenseEffect()
     {
-        Instantiate(defenseEffectPrefab, defenseEffectSpawnPoint.transform.position, Quaternion.identity, defenseEffectSpawnPoint.transform);
+        Instantiate(defenseEffectPrefab, defenseEffectPoint.transform.position, Quaternion.identity, defenseEffectPoint.transform);
     }
 
     public void FireWindGround()
     {
-        Instantiate(windGroundPrefab, hardSkillSpawnPoint.transform.position, Quaternion.identity);
+        Instantiate(windGroundPrefab, hardSkillPoint.transform.position, Quaternion.identity);
     }
 
     public void FireFlameHand()
     {
-        Instantiate(flameHandPrefab, rangeSkillSpawnPoint.transform.position, Quaternion.identity);
+        Instantiate(flameHandPrefab, rangeSkillPoint.transform.position, Quaternion.identity);
     }
 
     public void FireProjectile()
     {
-        Instantiate(projectilePrefab, stabSkillSpawnPoint.transform.position, Quaternion.identity);
+        Instantiate(projectilePrefab, stabSkillPoint.transform.position, Quaternion.identity);
     }
 }

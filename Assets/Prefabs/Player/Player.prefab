@@ -1264,10 +1264,10 @@ MonoBehaviour:
   windGroundPrefab: {fileID: 5172720743031656011, guid: 3f068fac8d695425e9095baad70f3bda, type: 3}
   flameHandPrefab: {fileID: 24052915007788363, guid: 1e6aa270a1daa49be839acb26b46ddec, type: 3}
   projectilePrefab: {fileID: 4891780971573526544, guid: f5af0a479b17947af95bf74bd3dc6cde, type: 3}
-  defenseEffectSpawnPoint: {fileID: 4960405524644617584}
-  hardSkillSpawnPoint: {fileID: 6193780908733437753}
-  rangeSkillSpawnPoint: {fileID: 4218539037101044588}
-  stabSkillSpawnPoint: {fileID: 8930689754408541906}
+  defenseEffectPoint: {fileID: 4960405524644617584}
+  hardSkillPoint: {fileID: 6193780908733437753}
+  rangeSkillPoint: {fileID: 4218539037101044588}
+  stabSkillPoint: {fileID: 8930689754408541906}
 --- !u!1 &2034921415427146200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,9 +2394,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8797792632463116709}
-  m_Layer: 3
-  m_Name: RangeSkillSpawnPoint
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: RangeSkillPoint
+  m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,9 +2960,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2248686758329460624}
-  m_Layer: 3
-  m_Name: DefenseEffectSpawnPoint
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: DefenseEffectPoint
+  m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3624,9 +3624,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2410814131897712978}
-  m_Layer: 3
-  m_Name: HardSkillSpawnPoint
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: HardSkillPoint
+  m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4957,7 +4957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8826930458707283331}
   m_Layer: 8
-  m_Name: StabSkillSpawnPoint
+  m_Name: StabSkillPoint
   m_TagString: SkillSpawnPoint
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
