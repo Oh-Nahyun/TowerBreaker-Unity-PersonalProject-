@@ -180,6 +180,11 @@ public class Player : MonoBehaviour
         collider2d = GetComponent<Collider2D>();
     }
 
+    private void Start()
+    {
+        GameManager.Instance.InGamePanel.UpdatePlayerHealthUI(Health);
+    }
+
     private void OnEnable()
     {
         inputActions.Player.Enable();
@@ -357,6 +362,7 @@ public class Player : MonoBehaviour
 
         health -= damage;
         health = Mathf.Clamp(health, 0, 100);
+        GameManager.Instance.InGamePanel.UpdatePlayerHealthUI(Health);
 
         if (health <= 0)
         {

@@ -67,7 +67,7 @@ public class BossEnemySpawner : MonoBehaviour
         StartSpawn();
     }
 
-    private void StartSpawn()
+    public void StartSpawn()
     {
         if (isOnSpawn)
         {

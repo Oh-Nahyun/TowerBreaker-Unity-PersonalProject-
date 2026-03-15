@@ -79,7 +79,7 @@ public class NormalEnemySpawner : MonoBehaviour
         StartSpawn();
     }
 
-    private void StartSpawn()
+    public void StartSpawn()
     {
         if (isOnSpawn)
         {

@@ -96,6 +96,8 @@ public class Enemy : MonoBehaviour
         animator.SetBool(IsDeathHash, !IsAlive());
         animator.SetTrigger(DeathHash);
 
+        GameManager.Instance.CountDeadEnemy();
+
         DisableCollider();
         StartCoroutine(DieProcessCoroutine());
     }
